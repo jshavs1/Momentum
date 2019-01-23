@@ -13,7 +13,7 @@ public class MultiplayerNetworkManager : MonoBehaviourPunCallbacks
     void Start()
     {
         if (Instance == null) { Instance = this; }
-        else { Destroy(this); }
+        else { Destroy(this); return; }
         DontDestroyOnLoad(this);
 
         ConnectToMaster();
@@ -23,6 +23,7 @@ public class MultiplayerNetworkManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.OfflineMode = false;
         PhotonNetwork.NickName = "Jack";
+        PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.GameVersion = "0.0.1";
 
 
@@ -34,16 +35,16 @@ public class MultiplayerNetworkManager : MonoBehaviourPunCallbacks
         base.OnConnectedToMaster();
         Debug.Log("Connected to Master");
 
-        Debug.Log("Attempting to join room");
+        Debug.Log("Attempting to join Room");
         PhotonNetwork.JoinRandomRoom();
     }
 
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
-        Debug.Log("Joined Room " + PhotonNetwork.CurrentRoom.Name);
+        Debug.Log("Joining Room " + PhotonNetwork.CurrentRoom.Name);
 
-        SceneManager.LoadScene("Test");
+        PhotonNetwork.LoadLevel("Test");
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
@@ -61,9 +62,7 @@ public class MultiplayerNetworkManager : MonoBehaviourPunCallbacks
 
     public void CreateRoom(string name)
     {
-        if (!PhotonNetwork.IsConnected) { return; }
-
-        Debug.Log("Creating room: " + name);
+        Debug.Log("Creating Room " + name);
         PhotonNetwork.CreateRoom(name, new RoomOptions() { MaxPlayers = 8 });
     }
 

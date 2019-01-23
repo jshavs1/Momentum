@@ -12,8 +12,8 @@ public class State
         this.psm = psm;
     }
 
-    public virtual void Enter(InputFrame input, GameObject obj) { Debug.Log("Entering State " + stateName); }
+    public virtual void Enter(InputFrame input, GameObject obj) { if (psm.debug) { Debug.Log("Entering State " + stateName); } }
     public virtual void Update(InputFrame input, GameObject obj){ }
     public virtual void FixedUpdate(InputFrame input, GameObject obj) { }
-    public virtual void Exit(InputFrame input, GameObject obj) { Debug.Log("Leaving State " + stateName); }
+    public virtual void Exit(InputFrame input, GameObject obj) { if (psm.debug) { Debug.Log("Leaving State " + stateName); } }
 }

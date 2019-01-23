@@ -1,26 +1,43 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    PhotonView PV;
     PlayerStateMachine psm;
+    InputFrame currentInput;
 
-    // Start is called before the first frame update
-    void Awake()
+    private void Start()
     {
+        PV = GetComponent<PhotonView>();
+
+        if (!PV.IsMine) { return; }
+
         psm = new PlayerStateMachine();
-        psm.currentState = new GroundedState(psm);
     }
 
     // Update is called once per frame
     void Update()
     {
-        psm.Update(InputFrame.GetFrame(), gameObject);
+        if (!PV.IsMine) { return; }
+
+        currentInput = InputFrame.GetFrame();
+        psm.Update(currentInput, gameObject);
     }
 
     private void FixedUpdate()
     {
-        psm.FixedUpdate(InputFrame.GetFrame(), gameObject);
+        if (!PV.IsMine) { return; }
+
+        psm.FixedUpdate(currentInput, gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!PV.IsMine) { return; }
+
+        psm.NextState(new GroundedState(psm), currentInput, gameObject);
     }
 }

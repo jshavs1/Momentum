@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GroundedState : RigidbodyState
 {
-    float acceleration = 0.85f;
+    float acceleration = 3.0f;
+    float maxSpeed = 10.0f;
 
     public GroundedState(PlayerStateMachine psm) : base(psm) { }
 
@@ -27,12 +28,15 @@ public class GroundedState : RigidbodyState
 
     public override void FixedUpdate(InputFrame input, GameObject obj)
     {
-        base.Update(input, obj);
+        base.FixedUpdate(input, obj);
 
-        float newX = Mathf.Lerp(rigid.velocity.x, input.x, acceleration);
-        float newZ = Mathf.Lerp(rigid.velocity.z, input.y, acceleration);
+        if (rigid == null) { return; }
 
-        rigid.velocity.Set(newX, rigid.velocity.y, newZ);
+        Vector3 vel = new Vector3(rigid.velocity.x, 0f, rigid.velocity.z);
+        Vector3 targetVel = new Vector3(input.x, 0f, input.y).normalized * maxSpeed;
+
+        rigid.AddForce((targetVel - vel) * acceleration);
+
     }
 
 }

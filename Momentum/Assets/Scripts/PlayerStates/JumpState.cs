@@ -13,6 +13,10 @@ public class JumpState : RigidbodyState
 
         rigid.AddForce(Vector3.up * force, ForceMode.Impulse);
 
-        psm.NextState(new AirState(psm), input, obj);
+        AirState nextState = new AirState(psm);
+
+        nextState.canJump = (psm.previousStates[0].GetType() != nextState.GetType());
+
+        psm.NextState(nextState, input, obj);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GroundedState : LocomotionState
 {
-    float acceleration = 4.0f;
+    float acceleration = 5.0f;
     float maxSpeed = 12.0f;
 
     public GroundedState(PlayerStateMachine psm) : base(psm) { }
@@ -22,6 +22,11 @@ public class GroundedState : LocomotionState
         if (input.JumpPress)
         {
             psm.NextState(new JumpState(psm));
+            return;
+        }
+        if (input.Ability1Hold)
+        {
+            psm.NextState(new GroundedFlowState(psm));
             return;
         }
     }

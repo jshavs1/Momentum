@@ -19,6 +19,6 @@ MonoBehaviour:
   Jump: 32
   Primary: 323
   Secondary: 324
-  Ability1: 101
-  Ability2: 113
-  Ability3: 304
+  Ability1: 304
+  Ability2: 101
+  Ability3: 113

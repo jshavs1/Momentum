@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AirState : LocomotionState
+public class AirFlowState : FlowState
 {
-    public AirState(PlayerStateMachine psm) : base(psm) { }
+    public AirFlowState(PlayerStateMachine psm) : base(psm) { }
 
-    float acceleration = 8.0f;
-    float maxSpeed = 5.0f;
     public bool canJump = true;
+    float acceleration = 5.0f;
 
     public override void Update(InputFrame input, GameObject obj)
     {
@@ -19,21 +18,20 @@ public class AirState : LocomotionState
             psm.NextState(new JumpState(psm));
             return;
         }
-        if (input.Ability1Hold)
+        if (!input.Ability1Hold)
         {
-            psm.NextState(new AirFlowState(psm));
+            psm.NextState(new AirState(psm));
         }
     }
 
     public override void FixedUpdate(InputFrame input, GameObject obj)
     {
         base.FixedUpdate(input, obj);
-
         Vector3 force = targetRotation * new Vector3(input.x, 0f, input.y) * acceleration;
 
         if (rigid.velocity.magnitude < maxSpeed || Vector3.Dot(force, rigid.velocity) < 0f)
             rigid.AddForce(force);
 
-        if (isGrounded) { psm.NextState(new GroundedState(psm)); }
+        if (isGrounded) { psm.NextState(new GroundedFlowState(psm)); }
     }
 }

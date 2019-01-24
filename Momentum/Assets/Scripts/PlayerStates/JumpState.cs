@@ -11,17 +11,29 @@ public class JumpState : LocomotionState
     {
         base.Enter(input, obj);
 
-        rigid.AddForce(LocomotionState.targetRotation * Vector3.up * force, ForceMode.Impulse);
+        rigid.AddForce(targetRotation * Vector3.up * force, ForceMode.Impulse);
 
         State nextState;
         if (isGrounded)
         {
-            nextState = new GroundedState(psm);
+            if (input.Ability1Hold)
+                nextState = new GroundedFlowState(psm);
+            else
+                nextState = new GroundedState(psm);
         }
         else
         {
-            nextState = new AirState(psm);
-            ((AirState)nextState).canJump = false;
+            if (input.Ability1Hold)
+            {
+                nextState = new AirFlowState(psm);
+                ((AirFlowState)nextState).canJump = false;
+            }
+            else
+            {
+                nextState = new AirState(psm);
+                ((AirState)nextState).canJump = false;
+            }
+            
         }
 
         psm.NextState(nextState);

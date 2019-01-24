@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpState : RigidbodyState
+public class JumpState : LocomotionState
 {
     public JumpState(PlayerStateMachine psm) : base(psm) { }
     public float force = 5.0f;
@@ -11,12 +11,19 @@ public class JumpState : RigidbodyState
     {
         base.Enter(input, obj);
 
-        rigid.AddForce(Vector3.up * force, ForceMode.Impulse);
+        rigid.AddForce(LocomotionState.targetRotation * Vector3.up * force, ForceMode.Impulse);
 
-        AirState nextState = new AirState(psm);
+        State nextState;
+        if (isGrounded)
+        {
+            nextState = new GroundedState(psm);
+        }
+        else
+        {
+            nextState = new AirState(psm);
+            ((AirState)nextState).canJump = false;
+        }
 
-        nextState.canJump = (psm.previousStates[0].GetType() != nextState.GetType());
-
-        psm.NextState(nextState, input, obj);
+        psm.NextState(nextState);
     }
 }

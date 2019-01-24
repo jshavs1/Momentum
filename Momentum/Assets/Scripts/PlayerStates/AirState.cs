@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AirState : RigidbodyState
+public class AirState : LocomotionState
 {
     public AirState(PlayerStateMachine psm) : base(psm) { }
 
     float acceleration = 7.0f;
     float maxSpeed = 5.0f;
-    public bool canJump;
+    public bool canJump = true;
 
     public override void Update(InputFrame input, GameObject obj)
     {
@@ -16,7 +16,7 @@ public class AirState : RigidbodyState
 
         if (input.JumpPress && canJump)
         {
-            psm.NextState(new JumpState(psm), input, obj);
+            psm.NextState(new JumpState(psm));
         }
     }
 
@@ -56,5 +56,6 @@ public class AirState : RigidbodyState
             }
         }
 
+        if (isGrounded) { psm.NextState(new GroundedState(psm)); }
     }
 }

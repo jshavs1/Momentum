@@ -7,6 +7,7 @@ public class NetworkPlayer : MonoBehaviour
 {
     private PhotonView PV;
     public GameObject player;
+    public CameraController playerCameraController;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,8 @@ public class NetworkPlayer : MonoBehaviour
 
         Debug.Log("Spawning Player!");
         player = MatchManager.Instance.SpawnPlayer();
+        player.GetComponent<PlayerStateMachine>().cc = playerCameraController;
+        playerCameraController.target = player.transform;
     }
 }
 

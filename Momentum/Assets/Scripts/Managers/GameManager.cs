@@ -26,5 +26,10 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         InputFrame.Update();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.None : CursorLockMode.Locked;
+        }
     }
 }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundedState : RigidbodyState
+public class GroundedState : LocomotionState
 {
-    float acceleration = 3.0f;
-    float maxSpeed = 10.0f;
+    float acceleration = 4.0f;
+    float maxSpeed = 12.0f;
 
     public GroundedState(PlayerStateMachine psm) : base(psm) { }
 
@@ -21,7 +21,7 @@ public class GroundedState : RigidbodyState
 
         if (input.JumpPress)
         {
-            psm.NextState(new JumpState(psm), input, obj);
+            psm.NextState(new JumpState(psm));
             return;
         }
     }
@@ -35,8 +35,8 @@ public class GroundedState : RigidbodyState
         Vector3 vel = new Vector3(rigid.velocity.x, 0f, rigid.velocity.z);
         Vector3 targetVel = new Vector3(input.x, 0f, input.y).normalized * maxSpeed;
 
-        rigid.AddForce((targetVel - vel) * acceleration);
+        rigid.AddForce((LocomotionState.targetRotation * (targetVel - vel)) * acceleration);
 
+        if (!isGrounded) { psm.NextState(new AirState(psm)); }
     }
-
 }

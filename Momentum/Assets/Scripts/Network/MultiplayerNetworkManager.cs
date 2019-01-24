@@ -44,7 +44,9 @@ public class MultiplayerNetworkManager : MonoBehaviourPunCallbacks
         base.OnJoinedRoom();
         Debug.Log("Joining Room " + PhotonNetwork.CurrentRoom.Name);
 
-        PhotonNetwork.LoadLevel("Test");
+        if (PhotonNetwork.IsMasterClient) {
+            PhotonNetwork.LoadLevel("Test");
+        }
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)

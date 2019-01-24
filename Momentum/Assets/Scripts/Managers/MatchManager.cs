@@ -6,6 +6,8 @@ using UnityEngine;
 public class MatchManager : MonoBehaviour
 {
     public static MatchManager Instance;
+
+    public Camera playerCamera;
     public Transform[] spawnPoints;
 
 
@@ -15,7 +17,7 @@ public class MatchManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            StartCoroutine(InstantiateNetworkPlayer());
+            InstantiateNetworkPlayer();
         }
         else
         {
@@ -24,11 +26,11 @@ public class MatchManager : MonoBehaviour
         }
     }
 
-    private IEnumerator InstantiateNetworkPlayer()
+    private void InstantiateNetworkPlayer()
     {
-        yield return new WaitForSecondsRealtime(2.0f);
         Debug.Log("Instantiating NetworkPlayer");
-        PhotonNetwork.Instantiate("NetworkPlayer", Vector3.zero, Quaternion.identity, 0);
+        GameObject networkPlayer = PhotonNetwork.Instantiate("NetworkPlayer", Vector3.zero, Quaternion.identity, 0);
+        networkPlayer.GetComponent<NetworkPlayer>().playerCameraController = playerCamera.GetComponent<CameraController>();
     }
 
     public GameObject SpawnPlayer()

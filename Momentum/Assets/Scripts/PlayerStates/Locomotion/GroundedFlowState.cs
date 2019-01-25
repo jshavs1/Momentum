@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class GroundedFlowState : FlowState
 {
-    public GroundedFlowState(PlayerStateMachine psm) : base(psm) { }
-
-    float acceleration = 10.0f;
-
+    public GroundedFlowState(PlayerStateMachine psm) : base(psm)
+    {
+        acceleration = 10.0f;
+    }
     public override void Update(InputFrame input, GameObject obj)
     {
         base.Update(input, obj);
 
         if (input.JumpPress)
         {
-            psm.NextState(new JumpState(psm));
+            psm.NextLocomotionState(new JumpState(psm));
             return;
         }
         if (!input.Ability1Hold)
         {
-            psm.NextState(new GroundedState(psm));
+            psm.NextLocomotionState(new GroundedState(psm));
         }
     }
 
@@ -27,9 +27,6 @@ public class GroundedFlowState : FlowState
     {
         base.FixedUpdate(input, obj);
 
-        Vector3 force = targetRotation * new Vector3(input.x, 0f, input.y) * acceleration;
-        
-        if (rigid.velocity.magnitude < maxSpeed || Vector3.Dot(force, rigid.velocity) < 0f)
-            rigid.AddForce(force);
+        AddMomemtum(input, obj);
     }
 }

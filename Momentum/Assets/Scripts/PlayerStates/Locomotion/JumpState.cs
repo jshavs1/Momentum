@@ -5,7 +5,7 @@ using UnityEngine;
 public class JumpState : LocomotionState
 {
     public JumpState(PlayerStateMachine psm) : base(psm) { }
-    public float force = 5.0f;
+    static float force = 5.0f;
 
     public override void Enter(InputFrame input, GameObject obj)
     {
@@ -13,7 +13,7 @@ public class JumpState : LocomotionState
 
         rigid.AddForce(targetRotation * Vector3.up * force, ForceMode.Impulse);
 
-        State nextState;
+        LocomotionState nextState;
         if (isGrounded)
         {
             if (input.Ability1Hold)
@@ -26,16 +26,16 @@ public class JumpState : LocomotionState
             if (input.Ability1Hold)
             {
                 nextState = new AirFlowState(psm);
-                ((AirFlowState)nextState).canJump = false;
+                nextState.canJump = false;
             }
             else
             {
                 nextState = new AirState(psm);
-                ((AirState)nextState).canJump = false;
+                nextState.canJump = false;
             }
             
         }
 
-        psm.NextState(nextState);
+        psm.NextLocomotionState(nextState);
     }
 }

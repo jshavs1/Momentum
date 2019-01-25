@@ -11,6 +11,11 @@ public class LocomotionState : RigidbodyState
     static Vector3 currentNormal = Vector3.up, surfaceNormal = Vector3.up, rotateVelocity = Vector3.zero;
     static float smooth = 0.1f;
 
+    public bool canJump = true;
+    protected float acceleration;
+    protected float maxSpeed;
+    protected float currentSpeed;
+
     public Collider collider;
 
     public bool isGrounded
@@ -39,6 +44,8 @@ public class LocomotionState : RigidbodyState
 
         camRotation = Quaternion.LookRotation(camForward, Vector3.up);
         targetRotation = Quaternion.FromToRotation(Vector3.up, currentNormal.normalized);
+
+        currentSpeed = rigid.velocity.magnitude;
     }
 
     public override void FixedUpdate(InputFrame input, GameObject obj)
@@ -97,4 +104,15 @@ public class LocomotionState : RigidbodyState
         return surfaceNormal;
     }
 
+    public void AddMomemtum(InputFrame input, GameObject obj)
+    {
+        Vector3 force = targetRotation * new Vector3(input.x, 0f, input.y) * acceleration;
+
+        if (currentSpeed > maxSpeed && Vector3.Dot(force, rigid.velocity) > 0f)
+        {
+            force = Vector3.Project(force, Vector3.Cross(obj.transform.up, rigid.velocity));
+        }
+
+        rigid.AddForce(force);
+    }
 }

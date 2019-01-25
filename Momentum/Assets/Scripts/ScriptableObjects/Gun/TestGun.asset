@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e0bcbc15f2885458a20a03341547b6, type: 3}
+  m_Name: TestGun
+  m_EditorClassIdentifier: 
+  damagePerShot: 12
+  knockbackPerShot: 0
+  fireRate: 0.3
+  maxSpreadGround: 20
+  minSpreadGround: 0
+  spreadRateGround: 0.2
+  spreadDecayRateGround: 0.05
+  maxSpreadAir: 40
+  minSpreadAir: 10
+  spreadRateAir: 0.3
+  spreadDecayRateAir: 0.025
+  falloffRange: 10
+  falloff: 0.3
+  compoundFalloff: 0

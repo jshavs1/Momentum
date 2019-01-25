@@ -5,22 +5,23 @@ using UnityEngine;
 
 public class PlayerStateMachine : MonoBehaviour
 {
-    public State currentState;
-    public CameraController cc;
-    public List<State> previousStates;
-    public InputFrame currentInput;
-    public LayerMask mask;
-    public bool debug = false;
     private PhotonView pv;
-    private int maxRecordSize = 3;
+    public CameraController cc;
 
+    public LocomotionState locomotionState;
+    public State actionState;
+    
+    public InputFrame currentInput;
+    public LayerMask mask, actionMask;
+
+    public bool debug = false;
+    
     public void Start()
     {
         pv = GetComponent<PhotonView>();
         if (!pv.IsMine) { return; }
 
-        previousStates = new List<State>();
-        NextState(new GroundedState(this));
+        NextLocomotionState(new GroundedState(this));
     }
 
     public void Update()
@@ -35,67 +36,67 @@ public class PlayerStateMachine : MonoBehaviour
             currentInput.y = relInput.y;
         }
 
-        currentState.Update(currentInput, gameObject);
+        locomotionState.Update(currentInput, gameObject);
     }
 
     public void FixedUpdate()
     {
         if (!pv.IsMine) { return; }
-        currentState.FixedUpdate(currentInput, gameObject);
+        locomotionState.FixedUpdate(currentInput, gameObject);
     }
 
     public void OnCollisionEnter(Collision collision)
     {
         if (!pv.IsMine) { return; }
-        currentState.OnCollisionEnter(collision, currentInput, gameObject);
+        locomotionState.OnCollisionEnter(collision, currentInput, gameObject);
     }
 
     public void OnCollisionExit(Collision collision)
     {
         if (!pv.IsMine) { return; }
-        currentState.OnCollisionExit(collision, currentInput, gameObject);
+        locomotionState.OnCollisionExit(collision, currentInput, gameObject);
     }
 
     public void OnCollisionStay(Collision collision)
     {
         if (!pv.IsMine) { return; }
-        currentState.OnCollisionStay(collision, currentInput, gameObject);
+        locomotionState.OnCollisionStay(collision, currentInput, gameObject);
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if (!pv.IsMine) { return; }
-        currentState.OnTriggerEnter(other, currentInput, gameObject);
+        locomotionState.OnTriggerEnter(other, currentInput, gameObject);
     }
 
     public void OnTriggerExit(Collider other)
     {
         if (!pv.IsMine) { return; }
-        currentState.OnTriggerExit(other, currentInput, gameObject);
+        locomotionState.OnTriggerExit(other, currentInput, gameObject);
     }
 
     public void OnTriggerStay(Collider other)
     {
         if (!pv.IsMine) { return; }
-        currentState.OnTriggerStay(other, currentInput, gameObject);
+        locomotionState.OnTriggerStay(other, currentInput, gameObject);
     }
 
-    public void NextState(State nextState)
+    private void NextState<T>(ref T currentState, T nextState) where T: State
     {
-        RecordState(currentState);
-
+        if (debug)
+            Debug.Log((currentState != null ? currentState.GetType().Name : "None") + " -> " + nextState.GetType().Name);
         currentState?.Exit(currentInput, gameObject);
         currentState = nextState;
         currentState.Enter(currentInput, gameObject);
     }
 
-    private void RecordState(State state)
+    public void NextLocomotionState(LocomotionState nextState)
     {
-        if (previousStates.Count >= maxRecordSize)
-        {
-            previousStates.RemoveAt(previousStates.Count - 1);
-        }
-        previousStates.Insert(0, state);
+        NextState(ref locomotionState, nextState);
     }
 
+    public void NextActionState(ActionState nextState)
+    {
+        NextState(ref actionState, nextState);
+    }
 }

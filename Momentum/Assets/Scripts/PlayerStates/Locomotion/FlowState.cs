@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class FlowState : LocomotionState
 {
-    public FlowState(PlayerStateMachine psm) : base(psm) { }
+    public FlowState(PlayerStateMachine psm) : base(psm)
+    {
+        maxSpeed = 15.0f;
+    }
 
     static PhysicMaterial flowMaterial = new PhysicMaterial();
-    public static float maxSpeed = 15f;
 
     public override void Enter(InputFrame input, GameObject obj)
     {

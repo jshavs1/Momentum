@@ -22,6 +22,7 @@ public class PlayerStateMachine : MonoBehaviour
         if (!pv.IsMine) { return; }
 
         NextLocomotionState(new GroundedState(this));
+        NextActionState(new IdleState(this));
     }
 
     public void Update()
@@ -37,48 +38,56 @@ public class PlayerStateMachine : MonoBehaviour
         }
 
         locomotionState.Update(currentInput, gameObject);
+        actionState.Update(currentInput, gameObject);
     }
 
     public void FixedUpdate()
     {
         if (!pv.IsMine) { return; }
         locomotionState.FixedUpdate(currentInput, gameObject);
+        actionState.FixedUpdate(currentInput, gameObject);
     }
 
     public void OnCollisionEnter(Collision collision)
     {
         if (!pv.IsMine) { return; }
         locomotionState.OnCollisionEnter(collision, currentInput, gameObject);
+        actionState.OnCollisionEnter(collision, currentInput, gameObject);
     }
 
     public void OnCollisionExit(Collision collision)
     {
         if (!pv.IsMine) { return; }
         locomotionState.OnCollisionExit(collision, currentInput, gameObject);
+        actionState.OnCollisionExit(collision, currentInput, gameObject);
     }
 
     public void OnCollisionStay(Collision collision)
     {
         if (!pv.IsMine) { return; }
         locomotionState.OnCollisionStay(collision, currentInput, gameObject);
+        actionState.OnCollisionStay(collision, currentInput, gameObject);
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if (!pv.IsMine) { return; }
         locomotionState.OnTriggerEnter(other, currentInput, gameObject);
+        actionState.OnTriggerEnter(other, currentInput, gameObject);
     }
 
     public void OnTriggerExit(Collider other)
     {
         if (!pv.IsMine) { return; }
         locomotionState.OnTriggerExit(other, currentInput, gameObject);
+        actionState.OnTriggerExit(other, currentInput, gameObject);
     }
 
     public void OnTriggerStay(Collider other)
     {
         if (!pv.IsMine) { return; }
         locomotionState.OnTriggerStay(other, currentInput, gameObject);
+        actionState.OnTriggerStay(other, currentInput, gameObject);
     }
 
     private void NextState<T>(ref T currentState, T nextState) where T: State

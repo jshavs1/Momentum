@@ -12,6 +12,7 @@ public class Gun : MonoBehaviour
     private float currentSpread = 0f;
     private float spreadVelocity = 0f;
     private float remainingCooldown = 0f;
+    private float remainingSpreadDecay = 0f;
 
 
     public void Start()
@@ -22,25 +23,28 @@ public class Gun : MonoBehaviour
     public void Update()
     {
         remainingCooldown = remainingCooldown - Time.deltaTime;
+        Debug.Log(currentSpread);
     }
 
     public void FixedUpdate()
     {
         if (gd?.isGrounded ?? true)
-            ReduceSpread(gunProfile.maxSpreadGround, gunProfile.minSpreadGround, gunProfile.spreadDecayRateGround);
+            ReduceSpread(gunProfile.maxSpreadGround, gunProfile.minSpreadGround);
         else
-            ReduceSpread(gunProfile.maxSpreadAir, gunProfile.minSpreadAir, gunProfile.spreadDecayRateAir);
+            ReduceSpread(gunProfile.maxSpreadAir, gunProfile.minSpreadAir);
+
+        remainingSpreadDecay = Mathf.Max(remainingSpreadDecay - Time.fixedDeltaTime, 0f);
     }
 
-    private void ReduceSpread(float maxSpread, float minSpread, float spreadDecayRate)
+    private void ReduceSpread(float maxSpread, float minSpread)
     {
-        currentSpread = Mathf.SmoothDamp(currentSpread, minSpread, ref spreadVelocity, spreadDecayRate);
+        currentSpread = Mathf.SmoothDamp(currentSpread, minSpread, ref spreadVelocity, remainingSpreadDecay);
     }
 
     public void Shoot()
     {
         if (remainingCooldown > 0f) { return; }
-        remainingCooldown = 1f / gunProfile.fireRate;
+        remainingCooldown = gunProfile.fireRate;
 
         float minSpread, maxSpread, spreadRate;
 
@@ -49,29 +53,32 @@ public class Gun : MonoBehaviour
             minSpread = gunProfile.minSpreadGround;
             maxSpread = gunProfile.maxSpreadGround;
             spreadRate = gunProfile.spreadRateGround;
+            remainingSpreadDecay = gunProfile.spreadDecayRateGround;
         }
         else
         {
             minSpread = gunProfile.minSpreadAir;
             maxSpread = gunProfile.maxSpreadAir;
             spreadRate = gunProfile.spreadRateAir;
+            remainingSpreadDecay = gunProfile.spreadDecayRateAir;
         }
 
-
-        float spreadX = Random.Range(minSpread, currentSpread), spreadY = Random.Range(minSpread, currentSpread);
+        
+        float spreadX = Random.Range(-currentSpread, currentSpread), spreadY = Random.Range(-currentSpread, currentSpread);
         Quaternion spreadRotation = Quaternion.Euler(spreadX, 0f, spreadY);
-
-        Vector3 direction = Camera.main.transform.rotation * spreadRotation * Vector3.forward;
-
-        currentSpread = Mathf.Clamp(currentSpread + (maxSpread - currentSpread) * spreadRate, 0f, maxSpread);
-
+        
         RaycastHit hit;
-        Ray ray = new Ray(Camera.main.transform.position, direction);
+        Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+        ray.origin = Vector3.Project(gameObject.transform.forward, ray.direction);
+        ray.direction = spreadRotation * ray.direction;
 
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, playerMask, QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane, playerMask, QueryTriggerInteraction.Ignore))
         {
             hit.collider.gameObject.GetComponent<IDamagable>()?.takeDamage(DamageToPlayer(hit));
         }
+
+        BulletRenderer.RenderBullet(ray, gunProfile.falloffRange);
+        currentSpread = Mathf.Clamp(currentSpread + (maxSpread - currentSpread) * spreadRate, 0f, maxSpread);
     }
 
     private float DamageToPlayer(RaycastHit hit)

@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2033624386250907960}
   - component: {fileID: 6911704253039975295}
   - component: {fileID: 6533028461946495841}
+  - component: {fileID: 6674060365714928536}
+  - component: {fileID: 7660036571063819676}
   - component: {fileID: 6007944682531003993}
   - component: {fileID: 4320280436393052510}
   - component: {fileID: 6365960641020108140}
@@ -126,6 +128,35 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &6674060365714928536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7610312930494908959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d83546359214854185c0d159115465f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useTrigger: 1
+--- !u!114 &7660036571063819676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7610312930494908959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83eca3e3c4b192408c36c859e3fe83a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunProfile: {fileID: 11400000, guid: 6708aa624abc1d247b07f44a5607c503, type: 2}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &6007944682531003993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +173,10 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 311
-  debug: 0
+  actionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  debug: 1
 --- !u!114 &4320280436393052510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +196,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 6365960641020108140}
-  viewIdField: 0
+  viewIdField: 1
   InstantiationId: 1
   isRuntimeInstantiated: 0
 --- !u!114 &6365960641020108140

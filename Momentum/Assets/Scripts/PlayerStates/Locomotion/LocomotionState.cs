@@ -6,7 +6,7 @@ public class LocomotionState : RigidbodyState
 {
     public LocomotionState(PlayerStateMachine psm) : base(psm) { }
 
-    static int _overlapping = 0;
+    protected GroundDetection gd;
     static public Quaternion targetRotation = Quaternion.identity, camRotation = Quaternion.identity;
     static Vector3 currentNormal = Vector3.up, surfaceNormal = Vector3.up, rotateVelocity = Vector3.zero;
     static float smooth = 0.1f;
@@ -22,7 +22,7 @@ public class LocomotionState : RigidbodyState
     {
         get
         {
-            return (_overlapping > 0);
+            return gd?.isGrounded ?? true;
         }
     }
 
@@ -30,6 +30,7 @@ public class LocomotionState : RigidbodyState
     {
         base.Enter(input, obj);
         collider = obj.GetComponent<Collider>();
+        gd = obj.GetComponent<GroundDetection>();
     }
 
     public override void Update(InputFrame input, GameObject obj)
@@ -55,18 +56,6 @@ public class LocomotionState : RigidbodyState
         currentNormal = Vector3.SmoothDamp(currentNormal, surfaceNormal, ref rotateVelocity, smooth, 100f, Time.fixedDeltaTime);
 
         obj.transform.rotation = targetRotation * camRotation;
-    }
-
-    public override void OnTriggerEnter(Collider other, InputFrame input, GameObject obj)
-    {
-        base.OnTriggerEnter(other, input, obj);
-        _overlapping++;
-    }
-
-    public override void OnTriggerExit(Collider other, InputFrame input, GameObject obj)
-    {
-        base.OnTriggerExit(other, input, obj);
-        _overlapping--;
     }
 
     private Vector3 CalculateBottom()

@@ -6,78 +6,78 @@ public class Gun : MonoBehaviour
 {
     public GunProfile gunProfile;
     public LayerMask playerMask;
-
-    private GroundDetection gd;
-
+    
     private float currentSpread = 0f;
     private float spreadVelocity = 0f;
     private float remainingCooldown = 0f;
     private float remainingSpreadDecay = 0f;
 
-
-    public void Start()
-    {
-        gd = GetComponent<GroundDetection>();
-    }
+    private float minSpread, maxSpread, spreadRate, spreadDecayRate;
 
     public void Update()
     {
         remainingCooldown = remainingCooldown - Time.deltaTime;
-        Debug.Log(currentSpread);
     }
 
     public void FixedUpdate()
     {
-        if (gd?.isGrounded ?? true)
-            ReduceSpread(gunProfile.maxSpreadGround, gunProfile.minSpreadGround);
-        else
-            ReduceSpread(gunProfile.maxSpreadAir, gunProfile.minSpreadAir);
+
+        ReduceSpread();
 
         remainingSpreadDecay = Mathf.Max(remainingSpreadDecay - Time.fixedDeltaTime, 0f);
     }
 
-    private void ReduceSpread(float maxSpread, float minSpread)
+    private void ReduceSpread()
     {
         currentSpread = Mathf.SmoothDamp(currentSpread, minSpread, ref spreadVelocity, remainingSpreadDecay);
     }
 
-    public void Shoot()
+    public void SetState(bool grounded)
     {
-        if (remainingCooldown > 0f) { return; }
-        remainingCooldown = gunProfile.fireRate;
-
-        float minSpread, maxSpread, spreadRate;
-
-        if (gd?.isGrounded ?? true)
+        if (grounded)
         {
             minSpread = gunProfile.minSpreadGround;
             maxSpread = gunProfile.maxSpreadGround;
             spreadRate = gunProfile.spreadRateGround;
-            remainingSpreadDecay = gunProfile.spreadDecayRateGround;
+            spreadDecayRate = gunProfile.spreadDecayRateGround;
         }
         else
         {
             minSpread = gunProfile.minSpreadAir;
             maxSpread = gunProfile.maxSpreadAir;
             spreadRate = gunProfile.spreadRateAir;
-            remainingSpreadDecay = gunProfile.spreadDecayRateAir;
+            spreadDecayRate = gunProfile.spreadDecayRateAir;
         }
+    }
 
-        
-        float spreadX = Random.Range(-currentSpread, currentSpread), spreadY = Random.Range(-currentSpread, currentSpread);
-        Quaternion spreadRotation = Quaternion.Euler(spreadX, 0f, spreadY);
+    public void Shoot()
+    {
+        if (remainingCooldown > 0f) { return; }
+        remainingCooldown = gunProfile.fireRate;
+        remainingSpreadDecay = spreadDecayRate;
         
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-        ray.origin = Vector3.Project(gameObject.transform.forward, ray.direction);
-        ray.direction = spreadRotation * ray.direction;
+
+        Vector3 spreadCoordinates = Random.onUnitSphere;
+        Vector3 dir = ray.direction * gunProfile.falloffRange;
+        dir.x += spreadCoordinates.x * currentSpread;
+        dir.y += spreadCoordinates.y * currentSpread;
+
+        ray.direction = dir.normalized;
+        ray.origin = transform.position - Vector3.Project(transform.position - ray.origin, Camera.main.transform.right) - Vector3.Project(transform.position - ray.origin, Camera.main.transform.up);
+
+        Vector3 bulletDir = ray.direction;
 
         if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane, playerMask, QueryTriggerInteraction.Ignore))
         {
             hit.collider.gameObject.GetComponent<IDamagable>()?.takeDamage(DamageToPlayer(hit));
+            bulletDir = (hit.point - transform.position).normalized;
         }
 
-        BulletRenderer.RenderBullet(ray, gunProfile.falloffRange);
+        Debug.DrawRay(ray.origin, ray.direction * Camera.main.farClipPlane, Color.green, 0.5f);
+
+        BulletRenderer.RenderBullet(transform.position, bulletDir, gunProfile.falloffRange);
         currentSpread = Mathf.Clamp(currentSpread + (maxSpread - currentSpread) * spreadRate, 0f, maxSpread);
     }
 
@@ -95,8 +95,6 @@ public class Gun : MonoBehaviour
                 damage = damage * (1f - gunProfile.falloff);
             }
         }
-
         return damage;
     }
-
 }

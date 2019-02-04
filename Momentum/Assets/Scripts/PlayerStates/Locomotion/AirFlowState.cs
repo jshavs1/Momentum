@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class AirFlowState : FlowState
 {
-    public AirFlowState(PlayerStateMachine psm) : base(psm)
-    {
-        acceleration = 5.0f;
-    }
+    public AirFlowState(PlayerStateMachine psm) : base(psm){ }
+
     public override void Update(InputFrame input, GameObject obj)
     {
         base.Update(input, obj);

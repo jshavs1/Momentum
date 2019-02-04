@@ -12,14 +12,14 @@ public class BulletPath : MonoBehaviour
         lineRenderer = gameObject.AddComponent<LineRenderer>();
     }
 
-    public void SetPath(Ray ray, float distance)
+    public void SetPath(Vector3 origin, Vector3 direction, float distance)
     {
-        transform.position = ray.origin;
-        transform.rotation = Quaternion.LookRotation(ray.direction);
+        transform.position = origin;
+        transform.rotation = Quaternion.LookRotation(direction);
 
         lineRenderer.positionCount = 2;
-        lineRenderer.SetPosition(0, ray.origin);
-        lineRenderer.SetPosition(1, ray.origin + ray.direction.normalized * distance);
+        lineRenderer.SetPosition(0, origin);
+        lineRenderer.SetPosition(1, origin + Vector3.ClampMagnitude(direction * Camera.main.farClipPlane, distance));
         lineRenderer.startWidth = 0.1f;
         lineRenderer.endWidth = 0.5f;
 
@@ -32,6 +32,7 @@ public class BulletPath : MonoBehaviour
         while(currentDuration < duration)
         {
             currentDuration += Time.deltaTime;
+            lineRenderer.startWidth = Mathf.Lerp(0.1f, 0f, currentDuration / duration);
             lineRenderer.endWidth = Mathf.Lerp(0.5f, 0f, currentDuration / duration);
             yield return null;
         }

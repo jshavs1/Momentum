@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class GroundedFlowState : FlowState
 {
-    public GroundedFlowState(PlayerStateMachine psm) : base(psm)
-    {
-        acceleration = 10.0f;
-    }
+    public GroundedFlowState(PlayerStateMachine psm) : base(psm){ }
+
     public override void Update(InputFrame input, GameObject obj)
     {
         base.Update(input, obj);

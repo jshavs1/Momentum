@@ -15,12 +15,12 @@ MonoBehaviour:
   damagePerShot: 12
   knockbackPerShot: 0
   fireRate: 0.1
-  maxSpreadGround: 20
+  maxSpreadGround: 5
   minSpreadGround: 0
   spreadRateGround: 0.2
   spreadDecayRateGround: 1
-  maxSpreadAir: 40
-  minSpreadAir: 10
+  maxSpreadAir: 10
+  minSpreadAir: 2
   spreadRateAir: 0.3
   spreadDecayRateAir: 0.5
   falloffRange: 10

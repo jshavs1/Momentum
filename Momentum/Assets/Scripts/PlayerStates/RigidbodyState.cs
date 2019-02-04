@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class RigidbodyState : State
 {
-    public Rigidbody rigid;
+    public RigidbodyController rigid;
 
     public RigidbodyState(PlayerStateMachine psm) : base(psm) { }
 
     public override void Enter(InputFrame input, GameObject obj)
     {
         base.Enter(input, obj);
-        rigid = obj.GetComponent<Rigidbody>();
+        rigid = obj.GetComponent<RigidbodyController>();
     }
 }

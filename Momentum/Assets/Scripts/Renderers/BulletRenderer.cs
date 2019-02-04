@@ -21,9 +21,9 @@ public class BulletRenderer : MonoBehaviour
         }
     }
 
-    public static void RenderBullet(Ray ray, float distance)
+    public static void RenderBullet(Vector3 origin, Vector3 direction, float distance)
     {
-        GameObject bulletPath = Instantiate(Instance.bulletPathObject.gameObject, ray.origin, Quaternion.identity);
-        bulletPath.GetComponent<BulletPath>().SetPath(ray, distance);
+        GameObject bulletPath = Instantiate(Instance.bulletPathObject.gameObject, origin, Quaternion.identity);
+        bulletPath.GetComponent<BulletPath>().SetPath(origin, direction, distance);
     }
 }

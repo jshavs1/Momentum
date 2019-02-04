@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour
     public Transform target;
 
     public float limitX, limitY;
+    public float shiftX, shiftY;
     public float angularSpeedX, angularSpeedY;
     public float distanceAway;
 
@@ -36,10 +37,11 @@ public class CameraController : MonoBehaviour
         deltaY = Mathf.Clamp(ClampAngle(deltaY), -limitY, limitY);
 
         Quaternion rot = Quaternion.Euler(new Vector3(-deltaY, deltaX, 0f));
-        Vector3 dist = new Vector3(0f, 0f, -distanceAway);
+        Vector3 dist = new Vector3(0f, 0f, -distanceAway) + Vector3.right * shiftX + Vector3.up * shiftY;
+        Vector3 targetPosition = rot * dist + target.position;
 
         transform.rotation = rot;
-        transform.position = rot * dist + target.position;
+        transform.position = targetPosition;
     }
 
     float ClampAngle(float angle)

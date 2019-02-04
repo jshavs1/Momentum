@@ -47,6 +47,11 @@ public class LocomotionState : RigidbodyState
         targetRotation = Quaternion.FromToRotation(Vector3.up, currentNormal.normalized);
 
         currentSpeed = rigid.velocity.magnitude;
+
+        if (input.PrimaryHold)
+        {
+            obj.GetComponent<Gun>()?.Shoot();
+        }
     }
 
     public override void FixedUpdate(InputFrame input, GameObject obj)

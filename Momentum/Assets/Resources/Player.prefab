@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6007944682531003993}
   - component: {fileID: 4320280436393052510}
   - component: {fileID: 6365960641020108140}
+  - component: {fileID: 4613453567834948205}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -156,7 +157,7 @@ MonoBehaviour:
   gunProfile: {fileID: 11400000, guid: 6708aa624abc1d247b07f44a5607c503, type: 2}
   playerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 4294967295
 --- !u!114 &6007944682531003993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +197,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 6365960641020108140}
-  viewIdField: 1
+  viewIdField: 0
   InstantiationId: 1
   isRuntimeInstantiated: 0
 --- !u!114 &6365960641020108140
@@ -214,3 +215,15 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!114 &4613453567834948205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7610312930494908959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e56718162a93435a89e44b6fb1c8f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

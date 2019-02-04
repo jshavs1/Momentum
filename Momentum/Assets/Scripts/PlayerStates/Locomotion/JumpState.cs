@@ -32,8 +32,7 @@ public class JumpState : LocomotionState
             {
                 nextState = new AirState(psm);
                 nextState.canJump = false;
-            }
-            
+            }   
         }
 
         psm.NextLocomotionState(nextState);

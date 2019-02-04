@@ -7,6 +7,7 @@ public class FlowState : LocomotionState
     public FlowState(PlayerStateMachine psm) : base(psm)
     {
         maxSpeed = 15.0f;
+        acceleration = 10.0f;
     }
 
     static PhysicMaterial flowMaterial = new PhysicMaterial();

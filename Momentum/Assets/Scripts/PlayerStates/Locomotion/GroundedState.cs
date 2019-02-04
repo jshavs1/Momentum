@@ -13,7 +13,7 @@ public class GroundedState : LocomotionState
     public override void Enter(InputFrame input, GameObject obj)
     {
         base.Enter(input, obj);
-        rigid = obj.GetComponent<Rigidbody>();
+        obj.GetComponent<Gun>()?.SetState(true);
     }
 
     public override void Update(InputFrame input, GameObject obj)

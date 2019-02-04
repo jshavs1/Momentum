@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class Gun : MonoBehaviour
 {
@@ -77,7 +78,8 @@ public class Gun : MonoBehaviour
 
         Debug.DrawRay(ray.origin, ray.direction * Camera.main.farClipPlane, Color.green, 0.5f);
 
-        BulletRenderer.RenderBullet(transform.position, bulletDir, gunProfile.falloffRange);
+        //RenderBullet(transform.position, bulletDir, gunProfile.falloffRange);
+        GetComponent<PhotonView>().RPC("RenderBullet", RpcTarget.All, transform.position, bulletDir, gunProfile.falloffRange);
         currentSpread = Mathf.Clamp(currentSpread + (maxSpread - currentSpread) * spreadRate, 0f, maxSpread);
     }
 
@@ -96,5 +98,12 @@ public class Gun : MonoBehaviour
             }
         }
         return damage;
+    }
+
+    [PunRPC]
+    private void RenderBullet(Vector3 origin, Vector3 direction, float distance)
+    {
+        GameObject bulletTrail = Instantiate(gunProfile.bulletTrail.gameObject, origin, Quaternion.identity);
+        bulletTrail.GetComponent<BulletTrail>().SetPath(origin, direction, distance);
     }
 }

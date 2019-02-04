@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletPath : MonoBehaviour
+public class BulletTrail : MonoBehaviour
 {
     private LineRenderer lineRenderer;
     public float duration;

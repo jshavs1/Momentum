@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Gun Input Profile", menuName = "GunProfile", order = 1)]
 public class GunProfile : ScriptableObject
 {
+    public BulletTrail bulletTrail;
+
     public float damagePerShot;
     public float knockbackPerShot;
     public float fireRate;

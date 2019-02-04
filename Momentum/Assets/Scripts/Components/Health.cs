@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Photon.Pun;
 
-public class Health : MonoBehaviour, IDamagable
+public class Health : MonoBehaviour, IDamagable, IPunObservable
 {
     private float _currentHitPoints;
     private float currentHitPoints
@@ -26,7 +27,7 @@ public class Health : MonoBehaviour, IDamagable
 
     public void takeDamage(float damage)
     {
-        hitPoints -= damage;
+        currentHitPoints -= damage;
     }
 
     private void HealthChanged(float prevHitPoints, float nextHitPoints)
@@ -40,5 +41,15 @@ public class Health : MonoBehaviour, IDamagable
 
     }
 
-
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(currentHitPoints);
+        }
+        else if (stream.IsReading)
+        {
+            currentHitPoints = (float) stream.ReceiveNext();
+        }
+    }
 }

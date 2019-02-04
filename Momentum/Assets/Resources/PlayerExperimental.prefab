@@ -95,6 +95,9 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 311
+  actionMask:
+    serializedVersion: 2
+    m_Bits: 0
   debug: 0
 --- !u!114 &6771426714532392192
 MonoBehaviour:

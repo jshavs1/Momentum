@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class BulletRenderer : MonoBehaviour
 {
     private static BulletRenderer Instance;
-    public BulletPath bulletPathObject;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,5 @@ public class BulletRenderer : MonoBehaviour
 
     public static void RenderBullet(Vector3 origin, Vector3 direction, float distance)
     {
-        GameObject bulletPath = Instantiate(Instance.bulletPathObject.gameObject, origin, Quaternion.identity);
-        bulletPath.GetComponent<BulletPath>().SetPath(origin, direction, distance);
     }
 }

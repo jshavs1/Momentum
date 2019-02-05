@@ -3,12 +3,13 @@ using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MultiplayerNetworkManager : MonoBehaviourPunCallbacks
 {
 
     public static MultiplayerNetworkManager Instance;
+
+    public List<RoomInfo> roomList = new List<RoomInfo>();
     
     void Start()
     {
@@ -44,15 +45,13 @@ public class MultiplayerNetworkManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinedLobby();
 
-        Debug.Log("Connected to Lobby. # of Rooms: " + PhotonNetwork.CountOfRooms);
-
-        PhotonNetwork.JoinRandomRoom();
+        Debug.Log("Connected to Lobby");
     }
 
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
-        Debug.Log("Joining Room " + PhotonNetwork.CurrentRoom.Name);
+        Debug.Log("Joined Room " + PhotonNetwork.CurrentRoom.Name);
 
         if (PhotonNetwork.IsMasterClient) {
             PhotonNetwork.LoadLevel("Test");
@@ -63,7 +62,6 @@ public class MultiplayerNetworkManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinRandomFailed(returnCode, message);
         Debug.Log(message);
-        CreateRoom(null);
     }
 
     public override void OnDisconnected(DisconnectCause cause)
@@ -72,11 +70,22 @@ public class MultiplayerNetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("Disconnected from Master");
     }
 
+    public void JoinRoom(string name)
+    {
+        Debug.Log("Joining Room " + name);
+        PhotonNetwork.JoinRoom(name);
+    }
+
     public void CreateRoom(string name)
     {
         Debug.Log("Creating Room " + name);
         PhotonNetwork.CreateRoom(name, new RoomOptions() { MaxPlayers = 8 });
     }
 
-
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        base.OnRoomListUpdate(roomList);
+        Debug.Log("Room list updated");
+        this.roomList = roomList;
+    }
 }

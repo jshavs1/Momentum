@@ -16,7 +16,7 @@ public class Health : MonoBehaviour, IDamagable, IPunObservable
         set
         {
             float nextHitPoints = Mathf.Clamp(value, 0f, hitPoints);
-            if (_currentHitPoints != value)
+            if (!Mathf.Approximately(_currentHitPoints, value))
                 HealthChanged(_currentHitPoints, nextHitPoints);
             _currentHitPoints = nextHitPoints;
         }
@@ -38,9 +38,9 @@ public class Health : MonoBehaviour, IDamagable, IPunObservable
 
     private void HealthChanged(float prevHitPoints, float nextHitPoints)
     {
-        if (nextHitPoints == 0f)
+        if (Mathf.Approximately(nextHitPoints, 0f))
             OnHealthZero.Invoke(prevHitPoints, 0f);
-        else if (nextHitPoints == hitPoints)
+        else if (Mathf.Approximately(nextHitPoints, hitPoints))
             OnHealthFull.Invoke(prevHitPoints, hitPoints);
         else
             OnHealthChanged.Invoke(prevHitPoints, nextHitPoints);

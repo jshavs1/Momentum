@@ -56,8 +56,8 @@ public class Gun : MonoBehaviour
         if (remainingCooldown > 0f) { return; }
         remainingCooldown = gunProfile.fireRate;
         remainingSpreadDecay = spreadDecayRate;
-        
-        RaycastHit hit;
+
+
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
 
         Vector3 spreadCoordinates = Random.onUnitSphere;
@@ -70,6 +70,16 @@ public class Gun : MonoBehaviour
 
         Vector3 bulletDir = ray.direction;
 
+        GetComponent<PhotonView>()?.RPC("RPCShoot", RpcTarget.All, ray.origin, ray.direction, bulletDir);
+        currentSpread = Mathf.Clamp(currentSpread + (maxSpread - currentSpread) * spreadRate, 0f, maxSpread);
+    }
+
+    [PunRPC]
+    public void RPCShoot(Vector3 origin, Vector3 dir, Vector3 bulletDir)
+    {
+        RaycastHit hit;
+        Ray ray = new Ray(origin, dir);
+
         if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane, playerMask, QueryTriggerInteraction.Ignore))
         {
             hit.collider.gameObject.GetComponent<IDamagable>()?.takeDamage(DamageToPlayer(hit));
@@ -78,9 +88,7 @@ public class Gun : MonoBehaviour
 
         Debug.DrawRay(ray.origin, ray.direction * Camera.main.farClipPlane, Color.green, 0.5f);
 
-        //RenderBullet(transform.position, bulletDir, gunProfile.falloffRange);
-        GetComponent<PhotonView>().RPC("RenderBullet", RpcTarget.All, transform.position, bulletDir, gunProfile.falloffRange);
-        currentSpread = Mathf.Clamp(currentSpread + (maxSpread - currentSpread) * spreadRate, 0f, maxSpread);
+        RenderBullet(transform.position, bulletDir, gunProfile.falloffRange);
     }
 
     private float DamageToPlayer(RaycastHit hit)
@@ -100,7 +108,7 @@ public class Gun : MonoBehaviour
         return damage;
     }
 
-    [PunRPC]
+
     private void RenderBullet(Vector3 origin, Vector3 direction, float distance)
     {
         GameObject bulletTrail = Instantiate(gunProfile.bulletTrail.gameObject, origin, Quaternion.identity);

@@ -23,7 +23,13 @@ public class Health : MonoBehaviour, IDamagable, IPunObservable
     }
     public float hitPoints;
 
-    public UnityEvent OnHealthChanged, OnHealthZero, OnHealthFull;
+    [SerializeField]
+    public HealthEvent OnHealthChanged, OnHealthZero, OnHealthFull;
+
+    public void Start()
+    {
+        currentHitPoints = hitPoints;
+    }
 
     public void takeDamage(float damage)
     {
@@ -33,11 +39,11 @@ public class Health : MonoBehaviour, IDamagable, IPunObservable
     private void HealthChanged(float prevHitPoints, float nextHitPoints)
     {
         if (nextHitPoints == 0f)
-            OnHealthZero.Invoke();
+            OnHealthZero.Invoke(prevHitPoints, 0f);
         else if (nextHitPoints == hitPoints)
-            OnHealthFull.Invoke();
+            OnHealthFull.Invoke(prevHitPoints, hitPoints);
         else
-            OnHealthChanged.Invoke();
+            OnHealthChanged.Invoke(prevHitPoints, nextHitPoints);
 
     }
 
@@ -45,11 +51,14 @@ public class Health : MonoBehaviour, IDamagable, IPunObservable
     {
         if (stream.IsWriting)
         {
-            stream.SendNext(currentHitPoints);
+            stream.SendNext(_currentHitPoints);
         }
-        else if (stream.IsReading)
+        else
         {
             currentHitPoints = (float) stream.ReceiveNext();
         }
     }
 }
+
+[System.Serializable]
+public class HealthEvent : UnityEvent<float, float> { }

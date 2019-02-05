@@ -34,8 +34,18 @@ public class MultiplayerNetworkManager : MonoBehaviourPunCallbacks
     {
         base.OnConnectedToMaster();
         Debug.Log("Connected to Master");
+        
+        Debug.Log("Attempting to join Lobby");
 
-        Debug.Log("Attempting to join Room");
+        PhotonNetwork.JoinLobby();
+    }
+
+    public override void OnJoinedLobby()
+    {
+        base.OnJoinedLobby();
+
+        Debug.Log("Connected to Lobby. # of Rooms: " + PhotonNetwork.CountOfRooms);
+
         PhotonNetwork.JoinRandomRoom();
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class RigidbodyController : MonoBehaviour
 {
-    Rigidbody rigid;
+    public Rigidbody rigid;
 
     public float multiplier = 1f;
 

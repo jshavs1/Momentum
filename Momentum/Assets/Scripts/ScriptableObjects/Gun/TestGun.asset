@@ -14,17 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletTrail: {fileID: 2969540198719001211, guid: 5a811e0e6a9eb494eae51d0a43190692,
     type: 3}
-  damagePerShot: 12
+  damagePerShot: 10
   knockbackPerShot: 0
   fireRate: 0.1
-  maxSpreadGround: 5
-  minSpreadGround: 0
-  spreadRateGround: 0.2
-  spreadDecayRateGround: 1
-  maxSpreadAir: 10
-  minSpreadAir: 2
-  spreadRateAir: 0.3
-  spreadDecayRateAir: 0.5
-  falloffRange: 10
+  maxSpread: 3.5
+  minSpread: 0
+  spreadRate: 0.2
+  spreadRecoveryRate: 0.4
+  airMaxSpread: 5
+  airMinSpread: 2
+  airSpreadRate: 0.3
+  airSpreadRecoveryRate: 0.5
+  ADSAccuracy: 0.3
+  ADSMovementSpeed: 0.2
+  falloffRange: 20
   falloff: 0.3
-  compoundFalloff: 0
+  compoundFalloff: 1

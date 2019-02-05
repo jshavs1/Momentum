@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 29}
   - component: {fileID: 34}
   - component: {fileID: 33}
-  - component: {fileID: 30}
+  - component: {fileID: 4875907505306431192}
   - component: {fileID: 28}
   - component: {fileID: 31}
   - component: {fileID: 35}
@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e56718162a93435a89e44b6fb1c8f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigid: {fileID: 0}
   multiplier: 1
 --- !u!114 &34
 MonoBehaviour:
@@ -205,11 +206,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f83eca3e3c4b192408c36c859e3fe83a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 1
   gunProfile: {fileID: 11400000, guid: 6708aa624abc1d247b07f44a5607c503, type: 2}
-  playerMask:
+  gunMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &30
+  minSpread: 0
+  maxSpread: 0
+  spreadRate: 0
+  spreadRecoveryRate: 0
+--- !u!114 &4875907505306431192
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,17 +224,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeb3ac01a5ea0c5409d51cf3d3cd30c6, type: 3}
+  m_Script: {fileID: 11500000, guid: d0a719f9905db407aacb11962e4fa948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cc: {fileID: 0}
-  mask:
+  debug: 0
+  collisionMask:
     serializedVersion: 2
-    m_Bits: 311
-  actionMask:
-    serializedVersion: 2
-    m_Bits: 0
-  debug: 1
+    m_Bits: 1335
 --- !u!114 &28
 MonoBehaviour:
   m_ObjectHideFlags: 0

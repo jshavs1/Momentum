@@ -2,32 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundedState : LocomotionState
+public class GroundState : MovementState
 {
-    public GroundedState(PlayerStateMachine psm) : base(psm)
+    public GroundState(MovementSM sm) : base(sm)
     {
-        acceleration = 5.0f;
+        acceleration = 7.0f;
         maxSpeed = 12.0f;
     }
 
     public override void Enter(InputFrame input, GameObject obj)
     {
         base.Enter(input, obj);
-        obj.GetComponent<Gun>()?.SetState(true);
     }
 
     public override void Update(InputFrame input, GameObject obj)
     {
         base.Update(input, obj);
 
-        if (input.JumpPress)
-        {
-            psm.NextLocomotionState(new JumpState(psm));
-            return;
-        }
         if (input.Ability1Hold)
         {
-            psm.NextLocomotionState(new GroundedFlowState(psm));
+            sm.NextState(new FlowState(sm));
             return;
         }
     }
@@ -41,8 +35,8 @@ public class GroundedState : LocomotionState
         Vector3 vel = new Vector3(rigid.velocity.x, 0f, rigid.velocity.z);
         Vector3 targetVel = new Vector3(input.x, 0f, input.y).normalized * maxSpeed;
 
-        rigid.AddForce((targetRotation * (targetVel - vel)) * acceleration);
+        rc.AddForce((targetRotation * (targetVel - vel)) * acceleration);
 
-        if (!isGrounded) { psm.NextLocomotionState(new AirState(psm)); }
+        if (!isGrounded) { sm.NextState(new AirState(sm)); }
     }
 }

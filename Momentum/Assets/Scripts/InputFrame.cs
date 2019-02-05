@@ -41,6 +41,14 @@ public struct InputFrame
         h = inputProfile.h();
         v = inputProfile.v();
 
+        CameraController cc;
+        if (cc = Camera.main.GetComponent<CameraController>())
+        {
+            Vector2 relInput = cc.InputToCameraSpace(new Vector2(x, y));
+            x = relInput.x;
+            y = relInput.y;
+        }
+
         JumpPress = inputProfile.JumpPress();
         JumpHold = inputProfile.JumpHold();
 

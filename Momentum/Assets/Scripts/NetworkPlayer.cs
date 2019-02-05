@@ -18,7 +18,6 @@ public class NetworkPlayer : MonoBehaviour
 
         Debug.Log("Spawning Player!");
         player = MatchManager.Instance.SpawnPlayer();
-        player.GetComponent<PlayerStateMachine>().cc = playerCameraController;
         playerCameraController.target = player.transform;
     }
 }

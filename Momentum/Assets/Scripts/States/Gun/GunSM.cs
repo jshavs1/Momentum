@@ -3,59 +3,49 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class Gun : MonoBehaviour
+public class GunSM : StateMachine
 {
     public GunProfile gunProfile;
-    public LayerMask playerMask;
+    public LayerMask gunMask;
     
     private float currentSpread = 0f;
     private float spreadVelocity = 0f;
     private float remainingCooldown = 0f;
-    private float remainingSpreadDecay = 0f;
+    private float remainingSpreadRecovery = 0f;
 
-    private float minSpread, maxSpread, spreadRate, spreadDecayRate;
+    public float minSpread, maxSpread, spreadRate, spreadRecoveryRate;
 
-    public void Update()
+    public override State StartingState()
     {
+        return new HipFireState(this);
+    }
+
+    public override void Update()
+    {
+        base.Update();
+
         remainingCooldown = remainingCooldown - Time.deltaTime;
     }
 
-    public void FixedUpdate()
+    public override void FixedUpdate()
     {
+        base.FixedUpdate();
 
         ReduceSpread();
 
-        remainingSpreadDecay = Mathf.Max(remainingSpreadDecay - Time.fixedDeltaTime, 0f);
+        remainingSpreadRecovery = Mathf.Max(remainingSpreadRecovery - Time.fixedDeltaTime, 0f);
     }
 
     private void ReduceSpread()
     {
-        currentSpread = Mathf.SmoothDamp(currentSpread, minSpread, ref spreadVelocity, remainingSpreadDecay);
-    }
-
-    public void SetState(bool grounded)
-    {
-        if (grounded)
-        {
-            minSpread = gunProfile.minSpreadGround;
-            maxSpread = gunProfile.maxSpreadGround;
-            spreadRate = gunProfile.spreadRateGround;
-            spreadDecayRate = gunProfile.spreadDecayRateGround;
-        }
-        else
-        {
-            minSpread = gunProfile.minSpreadAir;
-            maxSpread = gunProfile.maxSpreadAir;
-            spreadRate = gunProfile.spreadRateAir;
-            spreadDecayRate = gunProfile.spreadDecayRateAir;
-        }
+        currentSpread = Mathf.SmoothDamp(currentSpread, minSpread, ref spreadVelocity, remainingSpreadRecovery);
     }
 
     public void Shoot()
     {
         if (remainingCooldown > 0f) { return; }
         remainingCooldown = gunProfile.fireRate;
-        remainingSpreadDecay = spreadDecayRate;
+        remainingSpreadRecovery = spreadRecoveryRate;
 
 
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
@@ -80,7 +70,7 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         Ray ray = new Ray(origin, dir);
 
-        if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane, playerMask, QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane, gunMask, QueryTriggerInteraction.Ignore))
         {
             hit.collider.gameObject.GetComponent<IDamagable>()?.takeDamage(DamageToPlayer(hit));
             bulletDir = (hit.point - transform.position).normalized;

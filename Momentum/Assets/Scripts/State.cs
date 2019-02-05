@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class State
 {
-    public PlayerStateMachine psm;
+    public StateMachine sm;
     public string stateName { get { return GetType().Name; } }
 
-    public State(PlayerStateMachine psm)
+    protected GroundDetection gd;
+    protected RigidbodyController rc;
+
+
+    public State(StateMachine sm)
     {
-        this.psm = psm;
+        this.sm = sm;
     }
 
-    public virtual void Enter(InputFrame input, GameObject obj) { }
+    public virtual void Enter(InputFrame input, GameObject obj) { Init(input, obj); }
     public virtual void Update(InputFrame input, GameObject obj){ }
     public virtual void FixedUpdate(InputFrame input, GameObject obj) { }
     public virtual void Exit(InputFrame input, GameObject obj) { }
@@ -23,5 +27,27 @@ public class State
     public virtual void OnTriggerExit(Collider other, InputFrame input, GameObject obj) { }
     public virtual void OnTriggerStay(Collider other, InputFrame input, GameObject obj) { }
 
+
+    private void Init(InputFrame input, GameObject obj)
+    {
+        gd = obj.GetComponent<GroundDetection>() ?? obj.AddComponent<GroundDetection>();
+        rc = obj.GetComponent<RigidbodyController>();
+    }
+
+    public bool isGrounded
+    {
+        get
+        {
+            return gd?.isGrounded ?? true;
+        }
+    }
+
+    public Rigidbody rigid
+    {
+        get
+        {
+            return rc.rigid;
+        }
+    }
 
 }

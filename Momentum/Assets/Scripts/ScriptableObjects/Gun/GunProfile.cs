@@ -11,13 +11,18 @@ public class GunProfile : ScriptableObject
     public float knockbackPerShot;
     public float fireRate;
 
-    public float maxSpreadGround, minSpreadGround;
-    public float spreadRateGround;
-    public float spreadDecayRateGround;
+    public float maxSpread, minSpread;
+    public float spreadRate;
+    public float spreadRecoveryRate;
 
-    public float maxSpreadAir, minSpreadAir;
-    public float spreadRateAir;
-    public float spreadDecayRateAir;
+    public float airMaxSpread, airMinSpread;
+    public float airSpreadRate;
+    public float airSpreadRecoveryRate;
+
+    [Range(0f, 1f)]
+    public float ADSAccuracy;
+    [Range(0f, 1f)]
+    public float ADSMovementSpeed;
 
     public float falloffRange;
     public float falloff;

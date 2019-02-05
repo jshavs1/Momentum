@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LocomotionState : RigidbodyState
+public class MovementState : State
 {
-    public LocomotionState(PlayerStateMachine psm) : base(psm) { }
+    public new MovementSM sm;
+    public MovementState(MovementSM sm) : base(sm)
+    {
+        this.sm = sm;
+    }
 
-    protected GroundDetection gd;
     static public Quaternion targetRotation = Quaternion.identity, camRotation = Quaternion.identity;
     static Vector3 currentNormal = Vector3.up, surfaceNormal = Vector3.up, rotateVelocity = Vector3.zero;
     static float smooth = 0.1f;
@@ -18,19 +21,10 @@ public class LocomotionState : RigidbodyState
 
     public Collider collider;
 
-    public bool isGrounded
-    {
-        get
-        {
-            return gd?.isGrounded ?? true;
-        }
-    }
-
     public override void Enter(InputFrame input, GameObject obj)
     {
         base.Enter(input, obj);
         collider = obj.GetComponent<Collider>();
-        gd = obj.GetComponent<GroundDetection>();
     }
 
     public override void Update(InputFrame input, GameObject obj)
@@ -38,8 +32,8 @@ public class LocomotionState : RigidbodyState
         base.Update(input, obj);
 
         surfaceNormal = CalculateSurfaceNormal();
-        
-        Vector3 camForward = psm.cc.gameObject.transform.forward;
+
+        Vector3 camForward = Camera.main.gameObject.transform.forward;
         camForward.y = 0f;
         camForward.Normalize();
 
@@ -48,9 +42,10 @@ public class LocomotionState : RigidbodyState
 
         currentSpeed = rigid.velocity.magnitude;
 
-        if (input.PrimaryHold)
+        if (input.JumpPress && canJump)
         {
-            obj.GetComponent<Gun>()?.Shoot();
+            sm.NextState(new JumpState(sm));
+            return;
         }
     }
 
@@ -77,7 +72,7 @@ public class LocomotionState : RigidbodyState
 
         Vector3 origin = collider.bounds.center;
 
-        Collider[] colliders = Physics.OverlapSphere(origin, radius, psm.mask, QueryTriggerInteraction.Ignore);
+        Collider[] colliders = Physics.OverlapSphere(origin, radius, sm.collisionMask, QueryTriggerInteraction.Ignore);
         Vector3 surfaceNormal = Vector3.up;
 
         for (int i = 0; i < colliders.Length; i++)
@@ -89,7 +84,7 @@ public class LocomotionState : RigidbodyState
             RaycastHit hit;
             Ray ray = new Ray(origin, direction);
 
-            if (Physics.Raycast(ray, out hit, radius, psm.mask, QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(ray, out hit, radius, sm.collisionMask, QueryTriggerInteraction.Ignore))
             {
                 surfaceNormal += hit.normal * (1f - (direction.magnitude / radius));
             }
@@ -107,6 +102,6 @@ public class LocomotionState : RigidbodyState
             force = Vector3.Project(force, Vector3.Cross(obj.transform.up, rigid.velocity));
         }
 
-        rigid.AddForce(force);
+        rc.AddForce(force);
     }
 }

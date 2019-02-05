@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AirState : LocomotionState
+public class AirState : MovementState
 {
-    public AirState(PlayerStateMachine psm) : base(psm)
+    public AirState(MovementSM sm) : base(sm)
     {
         acceleration = 10.0f;
         maxSpeed = 5.0f;
@@ -13,21 +13,15 @@ public class AirState : LocomotionState
     public override void Enter(InputFrame input, GameObject obj)
     {
         base.Enter(input, obj);
-        obj.GetComponent<Gun>()?.SetState(false);
     }
 
     public override void Update(InputFrame input, GameObject obj)
     {
         base.Update(input, obj);
 
-        if (input.JumpPress && canJump)
-        {
-            psm.NextLocomotionState(new JumpState(psm));
-            return;
-        }
         if (input.Ability1Hold)
         {
-            psm.NextLocomotionState(new AirFlowState(psm));
+            sm.NextState(new FlowState(sm));
         }
     }
 
@@ -37,6 +31,6 @@ public class AirState : LocomotionState
 
         AddMomemtum(input, obj);
 
-        if (isGrounded) { psm.NextLocomotionState(new GroundedState(psm)); }
+        if (isGrounded) { sm.NextState(new GroundState(sm)); }
     }
 }

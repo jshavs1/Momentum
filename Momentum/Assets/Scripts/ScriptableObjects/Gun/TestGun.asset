@@ -21,7 +21,7 @@ MonoBehaviour:
   minSpread: 0.5
   spreadRate: 0.2
   spreadRecoveryRate: 0.4
-  airMaxSpread: 4
+  airMaxSpread: 3.5
   airMinSpread: 1.5
   airSpreadRate: 0.3
   airSpreadRecoveryRate: 0.5

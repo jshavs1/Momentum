@@ -12,7 +12,7 @@ public class RigidbodyView : MonoBehaviour, IPunObservable
     Vector3 networkPosition;
     Quaternion networkRotation;
 
-    public void Start()
+    public void OnEnable()
     {
         rigid = GetComponent<Rigidbody>();
         pv = GetComponent<PhotonView>();

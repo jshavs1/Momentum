@@ -31,5 +31,7 @@ MonoBehaviour:
   RpcList:
   - RenderBullet
   - RPCShoot
+  - takeDamageRPC
+  - RenderBulletRPC
   DisableAutoOpenWizard: 1
   ShowSettings: 0

@@ -18,6 +18,8 @@ public class Health : MonoBehaviour, IDamagable, IPunObservable
             float nextHitPoints = Mathf.Clamp(value, 0f, hitPoints);
             if (!Mathf.Approximately(_currentHitPoints, value))
                 HealthChanged(_currentHitPoints, nextHitPoints);
+            if (Mathf.Approximately(nextHitPoints, 0f))
+                nextHitPoints = hitPoints;
             _currentHitPoints = nextHitPoints;
         }
     }
@@ -32,6 +34,12 @@ public class Health : MonoBehaviour, IDamagable, IPunObservable
     }
 
     public void takeDamage(float damage)
+    {
+        GetComponent<PhotonView>()?.RPC("takeDamageRPC", RpcTarget.All, damage);
+    }
+
+    [PunRPC]
+    public void takeDamageRPC(float damage)
     {
         currentHitPoints -= damage;
     }
@@ -55,7 +63,7 @@ public class Health : MonoBehaviour, IDamagable, IPunObservable
         }
         else
         {
-            currentHitPoints = (float) stream.ReceiveNext();
+            _currentHitPoints = (float) stream.ReceiveNext();
         }
     }
 }

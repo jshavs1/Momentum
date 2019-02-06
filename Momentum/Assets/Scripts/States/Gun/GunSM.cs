@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class GunSM : StateMachine
+public class GunSM : StateMachine, IPunObservable
 {
     public GunProfile gunProfile;
     public LayerMask gunMask;
@@ -59,15 +59,9 @@ public class GunSM : StateMachine
 
         Vector3 bulletDir = ray.direction;
 
-        GetComponent<PhotonView>()?.RPC("RPCShoot", RpcTarget.All, ray.origin, ray.direction, bulletDir);
-        currentSpread = Mathf.Clamp(currentSpread + (maxSpread - currentSpread) * spreadRate, 0f, maxSpread);
-    }
-
-    [PunRPC]
-    public void RPCShoot(Vector3 origin, Vector3 dir, Vector3 bulletDir)
-    {
+        //GetComponent<PhotonView>()?.RPC("RPCShoot", RpcTarget.All, ray.origin, ray.direction, bulletDir);
+        //ShootRPC(ray.origin, ray.direction, bulletDir);
         RaycastHit hit;
-        Ray ray = new Ray(origin, dir);
 
         if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane, gunMask, QueryTriggerInteraction.Ignore))
         {
@@ -77,7 +71,15 @@ public class GunSM : StateMachine
 
         Debug.DrawRay(ray.origin, ray.direction * Camera.main.farClipPlane, Color.green, 0.5f);
 
-        RenderBullet(transform.position, bulletDir, hit.distance);
+        currentSpread = Mathf.Clamp(currentSpread + (maxSpread - currentSpread) * spreadRate, 0f, maxSpread);
+
+        GetComponent<PhotonView>()?.RPC("RenderBulletRPC", RpcTarget.All, bulletDir, hit.distance);
+    }
+
+    [PunRPC]
+    public void RenderBulletRPC(Vector3 bulletDir, float distance)
+    {
+        RenderBullet(transform.position, bulletDir, distance);
     }
 
     private float DamageToPlayer(RaycastHit hit)
@@ -102,5 +104,10 @@ public class GunSM : StateMachine
     {
         GameObject bulletTrail = Instantiate(gunProfile.bulletTrail.gameObject, origin, Quaternion.identity);
         bulletTrail.GetComponent<BulletTrail>().SetPath(origin, direction, distance);
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        throw new System.NotImplementedException();
     }
 }

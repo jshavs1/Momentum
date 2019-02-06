@@ -18,7 +18,7 @@ MonoBehaviour:
   knockbackPerShot: 0
   fireRate: 0.1
   maxSpread: 4
-  minSpread: 0
+  minSpread: 1
   spreadRate: 0.2
   spreadRecoveryRate: 0.4
   airMaxSpread: 6

@@ -8,7 +8,7 @@ public class GunSM : StateMachine
     public GunProfile gunProfile;
     public LayerMask gunMask;
     
-    private float currentSpread = 0f;
+    public float currentSpread = 0f;
     private float spreadVelocity = 0f;
     private float remainingCooldown = 0f;
     private float remainingSpreadRecovery = 0f;

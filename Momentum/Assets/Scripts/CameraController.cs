@@ -9,15 +9,15 @@ public class CameraController : MonoBehaviour
     public float limitX, limitY;
     public float shiftX, shiftY;
     public float angularSpeedX, angularSpeedY;
-    public float distanceAway;
+    public float distanceAway, currentDistanceAway;
+    public float adsFocusTime;
 
-    private float deltaX, deltaY;
+    private float deltaX, deltaY, remainingFocusTime;
+    private Coroutine focusRoutine;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        currentDistanceAway = distanceAway;
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour
         deltaY = Mathf.Clamp(ClampAngle(deltaY), -limitY, limitY);
 
         Quaternion rot = Quaternion.Euler(new Vector3(-deltaY, deltaX, 0f));
-        Vector3 dist = new Vector3(0f, 0f, -distanceAway) + Vector3.right * shiftX + Vector3.up * shiftY;
+        Vector3 dist = new Vector3(0f, 0f, -currentDistanceAway) + Vector3.right * shiftX + Vector3.up * shiftY;
         Vector3 targetPosition = rot * dist + target.position;
 
         transform.rotation = rot;
@@ -66,5 +66,50 @@ public class CameraController : MonoBehaviour
         camForward.Normalize();
 
         return i.x * camRight + i.y * camForward; 
+    }
+
+    public void MoveTo(float newDistance)
+    {
+        if (focusRoutine != null)
+            StopCoroutine(focusRoutine);
+
+        focusRoutine = StartCoroutine(MoveToRoutine(newDistance));
+    }
+
+    public void MoveBack()
+    {
+        if (focusRoutine != null)
+            StopCoroutine(focusRoutine);
+
+        focusRoutine = StartCoroutine(MoveBackRoutine());
+    }
+
+    public IEnumerator MoveToRoutine(float newDistance)
+    {
+        float time = 0f, prevDistance = currentDistanceAway;
+
+        while(time < adsFocusTime)
+        {
+            currentDistanceAway = Mathf.SmoothStep(currentDistanceAway, newDistance, Mathf.Clamp01(time / adsFocusTime));
+            yield return null;
+            time += Time.deltaTime;
+        }
+
+        currentDistanceAway = newDistance;
+    }
+
+    public IEnumerator MoveBackRoutine()
+    {
+        float time = 0f;
+        float prevDistance = currentDistanceAway;
+
+        while (time < adsFocusTime)
+        {
+            currentDistanceAway = Mathf.SmoothStep(prevDistance, distanceAway, Mathf.Clamp01(time / adsFocusTime));
+            yield return null;
+            time += Time.deltaTime;
+        }
+
+        currentDistanceAway = distanceAway;
     }
 }

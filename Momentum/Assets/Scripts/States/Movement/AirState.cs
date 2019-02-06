@@ -7,7 +7,7 @@ public class AirState : MovementState
     public AirState(MovementSM sm) : base(sm)
     {
         acceleration = 10.0f;
-        maxSpeed = 5.0f;
+        maxSpeed = 10.0f;
     }
 
     public override void Enter(InputFrame input, GameObject obj)
@@ -28,6 +28,11 @@ public class AirState : MovementState
     public override void FixedUpdate(InputFrame input, GameObject obj)
     {
         base.FixedUpdate(input, obj);
+
+        Vector3 horVel = rigid.velocity;
+        horVel.y = 0f;
+        if (horVel.magnitude > maxSpeed)
+            rc.AddDrag(0.02f, Direction.Horizontal);
 
         AddMomemtum(input, obj);
 

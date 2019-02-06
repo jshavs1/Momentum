@@ -10,22 +10,33 @@ public class ADSState : GunState
     {
         base.Enter(input, obj);
         rc.multiplier = sm.gunProfile.ADSMovementSpeed;
-        Camera.main.GetComponent<CameraController>().distanceAway -= 3f;
+        Camera.main.GetComponent<CameraController>().MoveTo(4f);
     }
 
     public override void Update(InputFrame input, GameObject obj)
     {
         base.Update(input, obj);
 
-        if (!isGrounded || !input.SecondaryHold)
+        if (!input.SecondaryHold)
             sm.NextState(new HipFireState(sm));
+    }
+
+    public override void FixedUpdate(InputFrame input, GameObject obj)
+    {
+        base.FixedUpdate(input, obj);
+
+        if (!isGrounded)
+        {
+            rc.AddDrag(0.04f, Direction.Vertical);
+            rc.AddDrag(0.02f, Direction.Horizontal);
+        }
     }
 
     public override void Exit(InputFrame input, GameObject obj)
     {
         base.Exit(input, obj);
         rc.multiplier = 1f;
-        Camera.main.GetComponent<CameraController>().distanceAway += 3f;
+        Camera.main.GetComponent<CameraController>().MoveBack();
     }
 
     public override void SetGunParams()

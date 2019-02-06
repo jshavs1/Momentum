@@ -56,6 +56,11 @@ public class MovementState : State
         currentNormal = Vector3.SmoothDamp(currentNormal, surfaceNormal, ref rotateVelocity, smooth, 100f, Time.fixedDeltaTime);
 
         obj.transform.rotation = targetRotation * camRotation;
+
+        if (!input.JumpHold && !isGrounded)
+        {
+            rc.AddForce(new Vector3(0f, Physics.gravity.y, 0f));
+        }
     }
 
     private Vector3 CalculateBottom()

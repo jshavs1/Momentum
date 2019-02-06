@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 28}
   - component: {fileID: 33}
   - component: {fileID: 35}
+  - component: {fileID: 6287798908634611719}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -211,6 +212,7 @@ MonoBehaviour:
   gunMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  currentSpread: 0
   minSpread: 0
   maxSpread: 0
   spreadRate: 0
@@ -278,3 +280,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba67b0ea92d2406dbacb4bb68db624a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6287798908634611719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7c618844de24fc089c72d7673b2d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reticle: {fileID: 2800000, guid: f00c14695242c4105b943203edcf3d89, type: 3}

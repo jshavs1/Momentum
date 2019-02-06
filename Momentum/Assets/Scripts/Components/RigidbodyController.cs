@@ -31,4 +31,27 @@ public class RigidbodyController : MonoBehaviour
     {
         rigid.AddForce(force * multiplier, mode);
     }
+
+    public void AddDrag(float drag, Direction dir)
+    {
+        Vector3 vel = rigid.velocity;
+        if (dir != Direction.Vertical)
+        {
+            vel.x *= (1f - drag);
+            vel.z *= (1f - drag);
+        }
+        if (dir != Direction.Horizontal)
+        {
+            vel.y *= (1f - drag);
+        }
+        rigid.velocity = vel;
+    }
+}
+
+
+public enum Direction
+{
+    Horizontal,
+    Vertical,
+    All
 }

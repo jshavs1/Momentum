@@ -10,7 +10,7 @@ public class HipFireState : GunState
     {
         base.Update(input, obj);
 
-        if (isGrounded && input.SecondaryHold)
+        if (input.SecondaryHold)
             sm.NextState(new ADSState(sm));
     }
 

@@ -1948,6 +1948,7 @@ MonoBehaviour:
   angularSpeedX: 360
   angularSpeedY: 360
   distanceAway: 7
+  adsFocusTime: 0.3
 --- !u!1 &1898160285
 GameObject:
   m_ObjectHideFlags: 0

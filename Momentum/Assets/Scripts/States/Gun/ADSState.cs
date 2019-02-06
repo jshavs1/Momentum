@@ -10,6 +10,7 @@ public class ADSState : GunState
     {
         base.Enter(input, obj);
         rc.multiplier = sm.gunProfile.ADSMovementSpeed;
+        Camera.main.GetComponent<CameraController>().distanceAway -= 3f;
     }
 
     public override void Update(InputFrame input, GameObject obj)
@@ -24,6 +25,7 @@ public class ADSState : GunState
     {
         base.Exit(input, obj);
         rc.multiplier = 1f;
+        Camera.main.GetComponent<CameraController>().distanceAway += 3f;
     }
 
     public override void SetGunParams()

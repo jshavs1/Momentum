@@ -7,7 +7,6 @@ public class MatchManager : MonoBehaviour
 {
     public static MatchManager Instance;
 
-    public Camera playerCamera;
     public Transform[] spawnPoints;
 
 
@@ -30,7 +29,6 @@ public class MatchManager : MonoBehaviour
     {
         Debug.Log("Instantiating NetworkPlayer");
         GameObject networkPlayer = PhotonNetwork.Instantiate("NetworkPlayer", Vector3.zero, Quaternion.identity, 0);
-        networkPlayer.GetComponent<NetworkPlayer>().playerCameraController = playerCamera.GetComponent<CameraController>();
     }
 
     public GameObject SpawnPlayer()

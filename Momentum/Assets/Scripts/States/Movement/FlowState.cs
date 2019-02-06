@@ -6,7 +6,7 @@ public class FlowState : MovementState
 {
     public FlowState(MovementSM sm) : base(sm)
     {
-        maxSpeed = 15.0f;
+        maxSpeed = 20.0f;
         acceleration = 12.0f;
     }
 
@@ -16,7 +16,7 @@ public class FlowState : MovementState
     {
         base.Enter(input, obj);
 
-        flowMaterial.bounciness = 0.7f;
+        flowMaterial.bounciness = 0f;
         flowMaterial.staticFriction = 0.1f;
         flowMaterial.dynamicFriction = 0f;
         flowMaterial.frictionCombine = PhysicMaterialCombine.Minimum;

@@ -52,8 +52,7 @@ public class GunSM : StateMachine
 
         Vector3 spreadCoordinates = Random.onUnitSphere;
         Vector3 dir = ray.direction * gunProfile.falloffRange;
-        dir.x += spreadCoordinates.x * currentSpread;
-        dir.y += spreadCoordinates.y * currentSpread;
+        dir += spreadCoordinates * currentSpread;
 
         ray.direction = dir.normalized;
         ray.origin = transform.position - Vector3.Project(transform.position - ray.origin, Camera.main.transform.right) - Vector3.Project(transform.position - ray.origin, Camera.main.transform.up);
@@ -78,7 +77,7 @@ public class GunSM : StateMachine
 
         Debug.DrawRay(ray.origin, ray.direction * Camera.main.farClipPlane, Color.green, 0.5f);
 
-        RenderBullet(transform.position, bulletDir, gunProfile.falloffRange);
+        RenderBullet(transform.position, bulletDir, hit.distance);
     }
 
     private float DamageToPlayer(RaycastHit hit)

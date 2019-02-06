@@ -5,7 +5,7 @@ using UnityEngine;
 public class JumpState : MovementState
 {
     public JumpState(MovementSM sm) : base(sm) { }
-    static float force = 6.0f;
+    static float force = 10.0f;
 
     public override void Enter(InputFrame input, GameObject obj)
     {

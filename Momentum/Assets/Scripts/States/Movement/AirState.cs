@@ -6,8 +6,8 @@ public class AirState : MovementState
 {
     public AirState(MovementSM sm) : base(sm)
     {
-        acceleration = 10.0f;
-        maxSpeed = 10.0f;
+        acceleration = 15.0f;
+        maxSpeed = 12.0f;
     }
 
     public override void Enter(InputFrame input, GameObject obj)

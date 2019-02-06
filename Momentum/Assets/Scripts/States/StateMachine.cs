@@ -15,12 +15,31 @@ public abstract class StateMachine : MonoBehaviour
 
     public abstract State StartingState();
 
-    public void Start()
+    public void OnEnable()
     {
         pv = GetComponent<PhotonView>();
         if (!pv.IsMine) { return; }
 
         NextState(StartingState());
+
+        GroundDetection gd;
+        if (gd = GetComponent<GroundDetection>())
+        {
+            gd.OnGroundEnter += OnGroundEnter;
+            gd.OnGroundExit += OnGroundExit;
+        }
+    }
+
+    public void OnDisable()
+    {
+        if (!pv.IsMine) { return; }
+
+        GroundDetection gd;
+        if (gd = GetComponent<GroundDetection>())
+        {
+            gd.OnGroundEnter -= OnGroundEnter;
+            gd.OnGroundExit -= OnGroundExit;
+        }
     }
 
     public virtual void Update()
@@ -71,6 +90,18 @@ public abstract class StateMachine : MonoBehaviour
     {
         if (!pv.IsMine) { return; }
         currentState.OnTriggerStay(other, currentInput, gameObject);
+    }
+
+    public void OnGroundEnter()
+    {
+        if (!pv.IsMine) { return; }
+        currentState.OnGroundEnter(currentInput, gameObject);
+    }
+
+    public void OnGroundExit()
+    {
+        if (!pv.IsMine) { return; }
+        currentState.OnGroundExit(currentInput, gameObject);
     }
 
     public void NextState(State nextState)

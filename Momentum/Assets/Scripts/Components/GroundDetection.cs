@@ -4,7 +4,28 @@ using UnityEngine;
 
 public class GroundDetection : MonoBehaviour
 {
-    private int _overlapping = 0;
+    public delegate void GroundDetectionEvent();
+    public event GroundDetectionEvent OnGroundEnter;
+    public event GroundDetectionEvent OnGroundExit;
+
+    private int _overlapping;
+    private int overlapping
+    {
+        get
+        {
+            return _overlapping;
+        }
+        set
+        {
+            if (_overlapping <= 0 && value > 0)
+                OnGroundEnter();
+            if (_overlapping > 0 && value <= 0)
+                OnGroundExit();
+
+            _overlapping = value;
+
+        }
+    }
     public bool useTrigger = true;
 
     public bool isGrounded
@@ -18,24 +39,24 @@ public class GroundDetection : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (useTrigger)
-            _overlapping++;
+            overlapping++;
     }
 
     public void OnTriggerExit(Collider other)
     {
         if (useTrigger)
-            _overlapping--;
+            overlapping--;
     }
 
     public void OnCollisionEnter(Collision collision)
     {
         if (!useTrigger)
-            _overlapping++;
+            overlapping++;
     }
 
     public void OnCollisionExit(Collision collision)
     {
         if (!useTrigger)
-            _overlapping--;
+            overlapping--;
     }
 }

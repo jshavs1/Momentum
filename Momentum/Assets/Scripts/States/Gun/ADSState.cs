@@ -28,7 +28,6 @@ public class ADSState : GunState
         if (!isGrounded)
         {
             rc.AddDrag(0.04f, Direction.Vertical);
-            rc.AddDrag(0.02f, Direction.Horizontal);
         }
     }
 

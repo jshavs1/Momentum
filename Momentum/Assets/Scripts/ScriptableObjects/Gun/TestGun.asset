@@ -17,16 +17,16 @@ MonoBehaviour:
   damagePerShot: 10
   knockbackPerShot: 0
   fireRate: 0.1
-  maxSpread: 4
-  minSpread: 1
+  maxSpread: 2.5
+  minSpread: 0.5
   spreadRate: 0.2
   spreadRecoveryRate: 0.4
-  airMaxSpread: 6
-  airMinSpread: 2
+  airMaxSpread: 4
+  airMinSpread: 1.5
   airSpreadRate: 0.3
   airSpreadRecoveryRate: 0.5
-  ADSAccuracy: 0.3
+  ADSAccuracy: 0.4
   ADSMovementSpeed: 0.2
-  falloffRange: 30
+  falloffRange: 25
   falloff: 0.3
   compoundFalloff: 1

@@ -26,6 +26,8 @@ public class State
     public virtual void OnTriggerEnter(Collider other, InputFrame input, GameObject obj) { }
     public virtual void OnTriggerExit(Collider other, InputFrame input, GameObject obj) { }
     public virtual void OnTriggerStay(Collider other, InputFrame input, GameObject obj) { }
+    public virtual void OnGroundEnter(InputFrame input, GameObject obj) { }
+    public virtual void OnGroundExit(InputFrame input, GameObject obj) { }
 
 
     private void Init(InputFrame input, GameObject obj)

@@ -34,8 +34,6 @@ public class FlowState : MovementState
             else
                 sm.NextState(new AirState(sm));
         }
-
-        canJump = isGrounded;
     }
 
     public override void FixedUpdate(InputFrame input, GameObject obj)
@@ -43,6 +41,12 @@ public class FlowState : MovementState
         base.FixedUpdate(input, obj);
 
         AddMomemtum(input, obj);
+    }
+
+    public override void OnGroundEnter(InputFrame input, GameObject obj)
+    {
+        base.OnGroundEnter(input, obj);
+        canJump = true;
     }
 
 

@@ -11,7 +11,19 @@ public class JumpState : MovementState
     {
         base.Enter(input, obj);
 
-        rigid.AddForce(targetRotation * Vector3.up * force, ForceMode.Impulse);
+        Vector3 vel = rigid.velocity;
+        if (vel.y < 0f)
+        {
+            vel.y = 0f;
+            vel += targetRotation * Vector3.up * force;
+            rigid.velocity = vel;
+        }
+        else
+        {
+            rigid.AddForce(targetRotation * Vector3.up * force, ForceMode.Impulse);
+        }
+
+
 
         MovementState nextState;
         if (isGrounded)

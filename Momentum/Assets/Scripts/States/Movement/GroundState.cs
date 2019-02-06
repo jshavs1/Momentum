@@ -6,7 +6,7 @@ public class GroundState : MovementState
 {
     public GroundState(MovementSM sm) : base(sm)
     {
-        acceleration = 7.0f;
+        acceleration = 10.0f;
         maxSpeed = 12.0f;
     }
 

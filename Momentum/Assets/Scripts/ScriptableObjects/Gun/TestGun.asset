@@ -21,12 +21,12 @@ MonoBehaviour:
   minSpread: 0.5
   spreadRate: 0.2
   spreadRecoveryRate: 0.4
-  airMaxSpread: 3.5
-  airMinSpread: 1.5
+  airMaxSpread: 3
+  airMinSpread: 1
   airSpreadRate: 0.3
   airSpreadRecoveryRate: 0.5
-  ADSAccuracy: 0.4
+  ADSAccuracy: 0.25
   ADSMovementSpeed: 0.2
   falloffRange: 25
-  falloff: 0.3
+  falloff: 0.1
   compoundFalloff: 1

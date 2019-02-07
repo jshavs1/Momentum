@@ -32,8 +32,6 @@ public class JumpState : MovementState
                 nextState = new FlowState(sm);
             else
                 nextState = new GroundState(sm);
-
-            nextState.canJump = true;
         }
         else
         {
@@ -41,8 +39,7 @@ public class JumpState : MovementState
                 nextState = new FlowState(sm);
             else
                 nextState = new AirState(sm);
-
-            nextState.canJump = false;
+            canJump = false;
         }
 
         sm.NextState(nextState);

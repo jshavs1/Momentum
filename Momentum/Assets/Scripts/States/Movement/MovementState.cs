@@ -14,7 +14,7 @@ public class MovementState : State
     static Vector3 currentNormal = Vector3.up, surfaceNormal = Vector3.up, rotateVelocity = Vector3.zero;
     static float smooth = 0.1f;
 
-    public bool canJump = true;
+    public static bool canJump = true;
     protected float acceleration;
     protected float maxSpeed;
     protected float currentSpeed;
@@ -61,6 +61,13 @@ public class MovementState : State
         {
             rc.AddForce(new Vector3(0f, Physics.gravity.y, 0f));
         }
+    }
+
+    public override void OnGroundEnter(InputFrame input, GameObject obj)
+    {
+        base.OnGroundEnter(input, obj);
+
+        canJump = true;
     }
 
     private Vector3 CalculateBottom()

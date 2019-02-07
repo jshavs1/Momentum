@@ -29,10 +29,13 @@ public class FlowState : MovementState
 
         if (!input.Ability1Hold)
         {
+            MovementState nextState;
             if (isGrounded)
-                sm.NextState(new GroundState(sm));
+                nextState = new GroundState(sm);
             else
-                sm.NextState(new AirState(sm));
+                nextState = new AirState(sm);
+
+            sm.NextState(nextState);
         }
     }
 
@@ -42,13 +45,6 @@ public class FlowState : MovementState
 
         AddMomemtum(input, obj);
     }
-
-    public override void OnGroundEnter(InputFrame input, GameObject obj)
-    {
-        base.OnGroundEnter(input, obj);
-        canJump = true;
-    }
-
 
     public override void Exit(InputFrame input, GameObject obj)
     {

@@ -16,18 +16,18 @@ public class Reticle : MonoBehaviour
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         float perceivedSize, actualSize = gun.currentSpread, distanceToObject = gun.currentGun.falloffRange, distanceToCam = cc.currentDistanceAway;
         perceivedSize = (actualSize / distanceToObject) * distanceToCam;
 
         Vector3 worldPos = cc.gameObject.transform.position;
         worldPos += cc.gameObject.transform.rotation * ((Vector3.forward * distanceToCam) - (Vector3.right * perceivedSize) - (Vector3.up * perceivedSize));
-        
+
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
 
-        texWidth = (int) Mathf.Abs((Screen.width / 2) - screenPos.x) * 2;
-        texHeight = (int) Mathf.Abs((Screen.height / 2) - screenPos.y) * 2;
+        texWidth = (int)Mathf.Abs((Screen.width / 2) - screenPos.x) * 2;
+        texHeight = (int)Mathf.Abs((Screen.height / 2) - screenPos.y) * 2;
     }
 
     private void OnGUI()

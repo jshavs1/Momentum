@@ -18,7 +18,7 @@ public class Reticle : MonoBehaviour
 
     private void Update()
     {
-        float perceivedSize, actualSize = gun.currentSpread, distanceToObject = gun.gunProfile.falloffRange, distanceToCam = cc.currentDistanceAway;
+        float perceivedSize, actualSize = gun.currentSpread, distanceToObject = gun.currentGun.falloffRange, distanceToCam = cc.currentDistanceAway;
         perceivedSize = (actualSize / distanceToObject) * distanceToCam;
 
         Vector3 worldPos = cc.gameObject.transform.position;

@@ -19,6 +19,8 @@ public class GunProfile : ScriptableObject
     public float airSpreadRate;
     public float airSpreadRecoveryRate;
 
+    public float switchToTime;
+
     [Range(0f, 1f)]
     public float ADSAccuracy;
     [Range(0f, 1f)]

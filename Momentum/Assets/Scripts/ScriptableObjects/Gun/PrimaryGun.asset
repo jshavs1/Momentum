@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e0bcbc15f2885458a20a03341547b6, type: 3}
+  m_Name: PrimaryGun
+  m_EditorClassIdentifier: 
+  bulletTrail: {fileID: 2969540198719001211, guid: 5a811e0e6a9eb494eae51d0a43190692,
+    type: 3}
+  damagePerShot: 10
+  knockbackPerShot: 0
+  fireRate: 0.1
+  maxSpread: 2.5
+  minSpread: 0.5
+  spreadRate: 0.2
+  spreadRecoveryRate: 0.4
+  airMaxSpread: 3
+  airMinSpread: 1
+  airSpreadRate: 0.3
+  airSpreadRecoveryRate: 0.5
+  switchToTime: 0.5
+  ADSAccuracy: 0.25
+  ADSMovementSpeed: 0.2
+  falloffRange: 25
+  falloff: 0.5
+  compoundFalloff: 0

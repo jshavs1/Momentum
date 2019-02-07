@@ -9,7 +9,7 @@ public class ADSState : GunState
     public override void Enter(InputFrame input, GameObject obj)
     {
         base.Enter(input, obj);
-        rc.multiplier = sm.gunProfile.ADSMovementSpeed;
+        rc.multiplier = sm.currentGun.ADSMovementSpeed;
         Camera.main.GetComponent<CameraController>().MoveTo(4f);
     }
 
@@ -42,9 +42,9 @@ public class ADSState : GunState
     {
         base.SetGunParams();
 
-        sm.spreadRate = sm.spreadRate * (1f - sm.gunProfile.ADSAccuracy);
-        sm.spreadRecoveryRate = sm.spreadRecoveryRate * (1f - sm.gunProfile.ADSAccuracy);
-        sm.maxSpread = sm.maxSpread - (sm.maxSpread - sm.minSpread) * sm.gunProfile.ADSAccuracy;
-        sm.minSpread = sm.minSpread * (1f - sm.gunProfile.ADSAccuracy);
+        sm.spreadRate = sm.spreadRate * (1f - sm.currentGun.ADSAccuracy);
+        sm.spreadRecoveryRate = sm.spreadRecoveryRate * (1f - sm.currentGun.ADSAccuracy);
+        sm.maxSpread = sm.maxSpread - (sm.maxSpread - sm.minSpread) * sm.currentGun.ADSAccuracy;
+        sm.minSpread = sm.minSpread * (1f - sm.currentGun.ADSAccuracy);
     }
 }

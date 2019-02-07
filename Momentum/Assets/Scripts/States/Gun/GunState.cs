@@ -16,6 +16,17 @@ public class GunState : State
 
         if (input.PrimaryHold)
             sm.Shoot();
+
+        if (input.DidScrollUp && sm.gunIndex == 0)
+        {
+            sm.NextState(new SwitchState(sm, sm.secondaryGun));
+            sm.gunIndex = 1;
+        }
+        else if (input.DidScrollDown && sm.gunIndex == 1)
+        {
+            sm.NextState(new SwitchState(sm, sm.primaryGun));
+            sm.gunIndex = 0;
+        }
     }
 
     public override void FixedUpdate(InputFrame input, GameObject obj)
@@ -30,17 +41,17 @@ public class GunState : State
     {
         if (isGrounded)
         {
-            sm.maxSpread = sm.gunProfile.maxSpread;
-            sm.minSpread = sm.gunProfile.minSpread;
-            sm.spreadRate = sm.gunProfile.spreadRate;
-            sm.spreadRecoveryRate = sm.gunProfile.spreadRecoveryRate;
+            sm.maxSpread = sm.currentGun.maxSpread;
+            sm.minSpread = sm.currentGun.minSpread;
+            sm.spreadRate = sm.currentGun.spreadRate;
+            sm.spreadRecoveryRate = sm.currentGun.spreadRecoveryRate;
         }
         else
         {
-            sm.maxSpread = sm.gunProfile.airMaxSpread;
-            sm.minSpread = sm.gunProfile.airMinSpread;
-            sm.spreadRate = sm.gunProfile.airSpreadRate;
-            sm.spreadRecoveryRate = sm.gunProfile.airSpreadRecoveryRate;
+            sm.maxSpread = sm.currentGun.airMaxSpread;
+            sm.minSpread = sm.currentGun.airMinSpread;
+            sm.spreadRate = sm.currentGun.airSpreadRate;
+            sm.spreadRecoveryRate = sm.currentGun.airSpreadRecoveryRate;
         }
 
     }

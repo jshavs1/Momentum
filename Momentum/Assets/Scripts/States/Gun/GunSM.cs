@@ -5,7 +5,9 @@ using Photon.Pun;
 
 public class GunSM : StateMachine, IPunObservable
 {
-    public GunProfile gunProfile;
+    public GunProfile primaryGun, secondaryGun;
+    internal GunProfile currentGun;
+    internal int gunIndex;
     public LayerMask gunMask;
     
     public float currentSpread = 0f;
@@ -18,6 +20,11 @@ public class GunSM : StateMachine, IPunObservable
     public override State StartingState()
     {
         return new HipFireState(this);
+    }
+
+    public void Start()
+    {
+        currentGun = primaryGun;
     }
 
     public override void Update()
@@ -44,14 +51,14 @@ public class GunSM : StateMachine, IPunObservable
     public void Shoot()
     {
         if (remainingCooldown > 0f) { return; }
-        remainingCooldown = gunProfile.fireRate;
+        remainingCooldown = currentGun.fireRate;
         remainingSpreadRecovery = spreadRecoveryRate;
 
 
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
 
         Vector3 spreadCoordinates = Random.onUnitSphere;
-        Vector3 dir = ray.direction * gunProfile.falloffRange;
+        Vector3 dir = ray.direction * currentGun.falloffRange;
         dir += spreadCoordinates * currentSpread;
 
         ray.direction = dir.normalized;
@@ -59,8 +66,6 @@ public class GunSM : StateMachine, IPunObservable
 
         Vector3 bulletDir = ray.direction;
 
-        //GetComponent<PhotonView>()?.RPC("RPCShoot", RpcTarget.All, ray.origin, ray.direction, bulletDir);
-        //ShootRPC(ray.origin, ray.direction, bulletDir);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane, gunMask, QueryTriggerInteraction.Ignore))
@@ -84,25 +89,32 @@ public class GunSM : StateMachine, IPunObservable
 
     private float DamageToPlayer(RaycastHit hit)
     {
-        float damage = gunProfile.damagePerShot;
-        if (hit.distance > gunProfile.falloffRange)
+        float damage = currentGun.damagePerShot;
+        if (hit.distance > currentGun.falloffRange)
         {
-            if (gunProfile.compoundFalloff)
+            if (currentGun.compoundFalloff)
             {
-                damage = damage * Mathf.Pow((1f - gunProfile.falloff), Mathf.Floor(hit.distance - gunProfile.falloffRange));
+                damage = damage * Mathf.Pow((1f - currentGun.falloff), Mathf.Floor(hit.distance - currentGun.falloffRange));
             }
             else
             {
-                damage = damage * (1f - gunProfile.falloff);
+                damage = damage * (1f - currentGun.falloff);
             }
         }
         return damage;
     }
 
+    public void ResetSpread()
+    {
+        spreadVelocity = 0f;
+        remainingSpreadRecovery = 0f;
+        remainingCooldown = 0f;
+    }
+
 
     private void RenderBullet(Vector3 origin, Vector3 direction, float distance)
     {
-        GameObject bulletTrail = Instantiate(gunProfile.bulletTrail.gameObject, origin, Quaternion.identity);
+        GameObject bulletTrail = Instantiate(currentGun.bulletTrail.gameObject, origin, Quaternion.identity);
         bulletTrail.GetComponent<BulletTrail>().SetPath(origin, direction, distance);
     }
 

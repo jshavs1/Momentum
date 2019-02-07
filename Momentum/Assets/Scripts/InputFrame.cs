@@ -10,6 +10,7 @@ public struct InputFrame
     public float y;
     public float h;
     public float v;
+    public float scroll;
 
     public bool JumpPress;
     public bool PrimaryPress;
@@ -23,6 +24,8 @@ public struct InputFrame
     public bool Ability1Hold;
     public bool Ability2Hold;
     public bool Ability3Hold;
+    public bool DidScrollUp;
+    public bool DidScrollDown;
 
     public static InputFrame GetFrame()
     {
@@ -40,6 +43,7 @@ public struct InputFrame
         y = inputProfile.y();
         h = inputProfile.h();
         v = inputProfile.v();
+        scroll = inputProfile.scroll();
 
         CameraController cc;
         if (cc = Camera.main.GetComponent<CameraController>())
@@ -66,6 +70,9 @@ public struct InputFrame
 
         Ability3Press = inputProfile.Ability3Press();
         Ability3Hold = inputProfile.Ability3Hold();
+
+        DidScrollUp = inputProfile.DidScrollUp();
+        DidScrollDown = inputProfile.DidScrollDown();
     }
 
     public static InputFrame none

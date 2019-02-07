@@ -207,8 +207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f83eca3e3c4b192408c36c859e3fe83a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
-  gunProfile: {fileID: 11400000, guid: 6708aa624abc1d247b07f44a5607c503, type: 2}
+  debug: 1
+  primaryGun: {fileID: 11400000, guid: 6708aa624abc1d247b07f44a5607c503, type: 2}
+  secondaryGun: {fileID: 11400000, guid: 40d38354e475c44c8ab2d0317022e2d0, type: 2}
   gunMask:
     serializedVersion: 2
     m_Bits: 4294967295

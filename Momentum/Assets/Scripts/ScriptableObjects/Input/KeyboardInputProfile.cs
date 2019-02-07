@@ -33,6 +33,10 @@ public class KeyboardInputProfile : InputProfile
     {
         return Input.GetAxis("Mouse Y");
     }
+    public override float scroll()
+    {
+        return Input.GetAxis("Mouse ScrollWheel");
+    }
     public override bool JumpPress()
     {
         return Input.GetKeyDown(Jump);
@@ -80,6 +84,14 @@ public class KeyboardInputProfile : InputProfile
     public override bool Ability3Hold()
     {
         return Input.GetKey(Ability3);
+    }
+    public override bool DidScrollUp()
+    {
+        return scroll() > 0.2f;
+    }
+    public override bool DidScrollDown()
+    {
+        return scroll() < -0.2f;
     }
 }
 

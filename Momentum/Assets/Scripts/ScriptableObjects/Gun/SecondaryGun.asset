@@ -10,23 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0e0bcbc15f2885458a20a03341547b6, type: 3}
-  m_Name: TestGun
+  m_Name: SecondaryGun
   m_EditorClassIdentifier: 
   bulletTrail: {fileID: 2969540198719001211, guid: 5a811e0e6a9eb494eae51d0a43190692,
     type: 3}
-  damagePerShot: 10
+  damagePerShot: 20
   knockbackPerShot: 0
-  fireRate: 0.1
-  maxSpread: 2.5
-  minSpread: 0.5
-  spreadRate: 0.2
-  spreadRecoveryRate: 0.4
-  airMaxSpread: 3
-  airMinSpread: 1
-  airSpreadRate: 0.3
-  airSpreadRecoveryRate: 0.5
-  ADSAccuracy: 0.25
-  ADSMovementSpeed: 0.2
-  falloffRange: 25
-  falloff: 0.1
-  compoundFalloff: 1
+  fireRate: 1
+  maxSpread: 12
+  minSpread: 7
+  spreadRate: 1
+  spreadRecoveryRate: 0.8
+  airMaxSpread: 15
+  airMinSpread: 10
+  airSpreadRate: 1
+  airSpreadRecoveryRate: 1
+  switchToTime: 0.7
+  ADSAccuracy: 0.9
+  ADSMovementSpeed: 0.1
+  falloffRange: 50
+  falloff: 0
+  compoundFalloff: 0

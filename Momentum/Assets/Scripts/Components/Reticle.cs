@@ -5,13 +5,13 @@ using UnityEngine;
 public class Reticle : MonoBehaviour
 {
     public Texture2D reticle;
-    private GunSM gun;
+    private Gun gun;
     private CameraController cc;
     private float texWidth, texHeight;
 
     private void Start()
     {
-        gun = GetComponent<GunSM>();
+        gun = GetComponent<Gun>();
         cc = Camera.main.GetComponent<CameraController>();
 
     }

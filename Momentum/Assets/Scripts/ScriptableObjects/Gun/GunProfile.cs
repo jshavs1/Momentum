@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Gun Input Profile", menuName = "GunProfile", order = 1)]
+[CreateAssetMenu(fileName = "New Gun Profile", menuName = "GunProfile", order = 1)]
 public class GunProfile : ScriptableObject
 {
     public BulletTrail bulletTrail;

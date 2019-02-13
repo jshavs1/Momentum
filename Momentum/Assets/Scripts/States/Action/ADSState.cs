@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ADSState : GunState
 {
-    public ADSState(GunSM sm) : base(sm) { }
+    public ADSState(ActionStateMachine sm) : base(sm) { }
 
     public override void Enter(InputFrame input, GameObject obj)
     {
         base.Enter(input, obj);
-        rc.multiplier = sm.currentGun.ADSMovementSpeed;
+        rc.multiplier = gun.currentGun.ADSMovementSpeed;
         Camera.main.GetComponent<CameraController>().MoveTo(4f);
     }
 
@@ -42,9 +42,9 @@ public class ADSState : GunState
     {
         base.SetGunParams();
 
-        sm.spreadRate = sm.spreadRate * (1f - sm.currentGun.ADSAccuracy);
-        sm.spreadRecoveryRate = sm.spreadRecoveryRate * (1f - sm.currentGun.ADSAccuracy);
-        sm.maxSpread = sm.maxSpread - (sm.maxSpread - sm.minSpread) * sm.currentGun.ADSAccuracy;
-        sm.minSpread = sm.minSpread * (1f - sm.currentGun.ADSAccuracy);
+        gun.spreadRate = gun.spreadRate * (1f - gun.currentGun.ADSAccuracy);
+        gun.spreadRecoveryRate = gun.spreadRecoveryRate * (1f - gun.currentGun.ADSAccuracy);
+        gun.maxSpread = gun.maxSpread - (gun.maxSpread - gun.minSpread) * gun.currentGun.ADSAccuracy;
+        gun.minSpread = gun.minSpread * (1f - gun.currentGun.ADSAccuracy);
     }
 }

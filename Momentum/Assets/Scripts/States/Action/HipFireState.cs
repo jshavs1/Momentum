@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HipFireState : GunState
 {
-    public HipFireState(GunSM sm): base(sm) { }
+    public HipFireState(ActionStateMachine sm): base(sm) { }
 
     public override void Update(InputFrame input, GameObject obj)
     {

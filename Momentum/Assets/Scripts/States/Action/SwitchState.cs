@@ -7,7 +7,7 @@ public class SwitchState : GunState
     GunProfile nextGun;
     float remainingSwitchTime;
 
-    public SwitchState(GunSM sm, GunProfile nextGun) : base(sm)
+    public SwitchState(ActionStateMachine sm, GunProfile nextGun) : base(sm)
     {
         this.nextGun = nextGun;
     }
@@ -17,22 +17,22 @@ public class SwitchState : GunState
         base.Enter(input, obj);
 
         remainingSwitchTime = nextGun.switchToTime;
-        sm.currentGun = nextGun;
-        sm.ResetSpread();
+        gun.currentGun = nextGun;
+        gun.ResetSpread();
         SetGunParams();
     }
 
     public override void Update(InputFrame input, GameObject obj)
     {
-        if (input.DidScrollUp && sm.gunIndex == 0)
+        if (input.DidScrollUp && gun.gunIndex == 0)
         {
-            sm.NextState(new SwitchState(sm, sm.secondaryGun));
-            sm.gunIndex = 1;
+            sm.NextState(new SwitchState(sm, gun.secondaryGun));
+            gun.gunIndex = 1;
         }
-        else if (input.DidScrollDown && sm.gunIndex == 1)
+        else if (input.DidScrollDown && gun.gunIndex == 1)
         {
-            sm.NextState(new SwitchState(sm, sm.primaryGun));
-            sm.gunIndex = 0;
+            sm.NextState(new SwitchState(sm, gun.primaryGun));
+            gun.gunIndex = 0;
         }
     }
 

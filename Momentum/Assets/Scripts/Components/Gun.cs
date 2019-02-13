@@ -3,41 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class GunSM : StateMachine, IPunObservable
+public class Gun : MonoBehaviour
 {
     public GunProfile primaryGun, secondaryGun;
     internal GunProfile currentGun;
     internal int gunIndex;
     public LayerMask gunMask;
-    
-    public float currentSpread = 0f;
-    private float spreadVelocity = 0f;
-    private float remainingCooldown = 0f;
-    private float remainingSpreadRecovery = 0f;
+
+    public float currentSpread;
+    private float spreadVelocity;
+    private float remainingCooldown;
+    private float remainingSpreadRecovery;
 
     public float minSpread, maxSpread, spreadRate, spreadRecoveryRate;
-
-    public override State StartingState()
-    {
-        return new HipFireState(this);
-    }
 
     public void Start()
     {
         currentGun = primaryGun;
     }
 
-    public override void Update()
+    public void Update()
     {
-        base.Update();
-
         remainingCooldown = remainingCooldown - Time.deltaTime;
     }
 
-    public override void FixedUpdate()
+    public void FixedUpdate()
     {
-        base.FixedUpdate();
-
         ReduceSpread();
 
         remainingSpreadRecovery = Mathf.Max(remainingSpreadRecovery - Time.fixedDeltaTime, 0f);
@@ -116,10 +107,5 @@ public class GunSM : StateMachine, IPunObservable
     {
         GameObject bulletTrail = Instantiate(currentGun.bulletTrail.gameObject, origin, Quaternion.identity);
         bulletTrail.GetComponent<BulletTrail>().SetPath(origin, direction, distance);
-    }
-
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        throw new System.NotImplementedException();
     }
 }

@@ -46,14 +46,13 @@ public class Gun : MonoBehaviour
         remainingSpreadRecovery = spreadRecoveryRate;
 
 
-        Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+        Ray ray = Camera.main.GetComponent<CameraController>().cameraRay;
 
         Vector3 spreadCoordinates = Random.onUnitSphere;
         Vector3 dir = ray.direction * currentGun.falloffRange;
         dir += spreadCoordinates * currentSpread;
 
         ray.direction = dir.normalized;
-        ray.origin = transform.position - Vector3.Project(transform.position - ray.origin, Camera.main.transform.right) - Vector3.Project(transform.position - ray.origin, Camera.main.transform.up);
 
         Vector3 bulletDir = ray.direction;
 

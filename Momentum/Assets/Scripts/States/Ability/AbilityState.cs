@@ -7,7 +7,6 @@ public class AbilityState : State
     public new AbilityStateMachine sm;
 
     public AbilityProfile ability;
-    public int abilitySlot;
     public float remainingDuration;
 
     public AbilityState(AbilityStateMachine sm) : base(sm)
@@ -18,11 +17,11 @@ public class AbilityState : State
     public override void Enter(InputFrame input, GameObject obj)
     {
         base.Enter(input, obj);
-        abilitySlot = input.Ability2Press ? 1 : 2;
 
-        SetActive(ability.passive);
+        SetStateMachinesIsDisabled(obj, true);
+
         if (!ability.beginCoolDownOnCompletion)
-            SetCooldown();
+            StartCooldown();
     }
 
     public override void FixedUpdate(InputFrame input, GameObject obj)
@@ -31,47 +30,40 @@ public class AbilityState : State
 
         remainingDuration -= Time.fixedDeltaTime;
         if (remainingDuration <= 0f)
+        {
             sm.NextState(new IdleState(sm));
+            return;
+        }
     }
 
     public override void Exit(InputFrame input, GameObject obj)
     {
         base.Exit(input, obj);
 
-        SetActive(false);
+        SetStateMachinesIsDisabled(obj, false);
+
         if (ability.beginCoolDownOnCompletion)
-            SetCooldown();
+            StartCooldown();
     }
 
-    public void SetCooldown()
+    public void SetStateMachinesIsDisabled(GameObject obj, bool isDisabled)
     {
-        if (abilitySlot == 1)
-            sm.cooldown1 = ability.cooldown;
-        else if (abilitySlot == 2)
-            sm.cooldown2 = ability.cooldown;
-    }
-
-    public void SetActive(bool active)
-    {
-        if (abilitySlot == 1)
-            sm.ability1Active = active;
-        else if (abilitySlot == 2)
-            sm.ability2Active = active;
-    }
-
-    public bool AbilityHold
-    {
-        get
+        if (ability.disableGun)
+            obj.GetComponent<ActionStateMachine>().isDisabled = isDisabled;
+        if (ability.disableMovement)
+            obj.GetComponent<MovementSM>().isDisabled = isDisabled;
+        if (ability.disableAbilities)
         {
-            return abilitySlot == 1 ? InputFrame.input.Ability2Hold : InputFrame.input.Ability3Hold;
+            foreach (AbilityStateMachine abs in obj.GetComponents<AbilityStateMachine>())
+            {
+                if (abs != sm)
+                    abs.isDisabled = isDisabled;
+            }
         }
     }
 
-    public bool AbilityPress
+    public void StartCooldown()
     {
-        get
-        {
-            return abilitySlot == 1 ? InputFrame.input.Ability2Press : InputFrame.input.Ability3Press;
-        }
+        sm.remainingCooldown = ability.cooldown;
     }
 }

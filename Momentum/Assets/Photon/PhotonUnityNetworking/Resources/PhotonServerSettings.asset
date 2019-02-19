@@ -33,5 +33,10 @@ MonoBehaviour:
   - RPCShoot
   - takeDamageRPC
   - RenderBulletRPC
+  - ShootProjectileRPC
+  - TriggerProjectileRPC
+  - TriggerProjectileLateralRPC
+  - ExplodeRPC
+  - TakeKnockbackRPC
   DisableAutoOpenWizard: 1
   ShowSettings: 0

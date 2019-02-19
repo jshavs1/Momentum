@@ -13,7 +13,8 @@ public class ThrusterState : AbilityState
     {
         base.Update(input, obj);
 
-        Debug.Log("Remaining Fuel: " + remainingFuel);
+        if (input.JumpHold)
+            Debug.Log("Remaining Fuel: " + remainingFuel);
     }
 
     public override void FixedUpdate(InputFrame input, GameObject obj)
@@ -33,7 +34,7 @@ public class ThrusterState : AbilityState
     private void AddThrust()
     {
         Vector3 vel = rigid.velocity;
-        float relativeThrust = Mathf.Max(Mathf.Max(ability.maxYVel - vel.y, 0f) / ability.maxYVel, 1f);
+        float relativeThrust = Mathf.Max(Mathf.Max(ability.maxYVel - vel.y, 0f) / ability.maxYVel, 0.5f);
 
         rigid.AddForce(Vector3.up * ability.thrust * relativeThrust);
     }

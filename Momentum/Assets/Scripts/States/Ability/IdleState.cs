@@ -14,31 +14,13 @@ public class IdleState : State
     {
         base.Update(input, obj);
 
-        if (UseAbility1(input))
-            sm.NextState(sm.ability1.InstantiateState(sm));
-        if (UseAbility2(input))
-            sm.NextState(sm.ability2.InstantiateState(sm));
+        UseAbility(input);
     }
 
-    public bool UseAbility1(InputFrame input)
+    public void UseAbility(InputFrame input)
     {
-        if (sm.ability1 == null) { return false; }
-        if (input.Ability2Press && sm.ability1Ready)
-        {
-            if (sm.ability2.passive || !sm.ability2Active)
-                return true;
-        }
-        return false;
-    }
-
-    public bool UseAbility2(InputFrame input)
-    {
-        if (sm.ability2 == null) { return false; }
-        if (input.Ability3Press && sm.ability2Ready)
-        {
-            if (sm.ability1.passive || !sm.ability1Active)
-                return true;
-        }
-        return false;
+        if (sm.ability == null) { return; }
+        if (sm.AbilityPress && sm.abilityReady)
+            sm.NextState(sm.ability.InstantiateState(sm));
     }
 }

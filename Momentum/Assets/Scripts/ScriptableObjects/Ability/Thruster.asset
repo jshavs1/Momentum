@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 7
   duration: 10
-  passive: 0
   beginCoolDownOnCompletion: 1
   disableMovement: 0
   disableGun: 0
-  thrust: 10
+  disableAbilities: 0
+  thrust: 20
   maxYVel: 10
   fuel: 5

@@ -11,7 +11,7 @@ public abstract class StateMachine : MonoBehaviour
 
     public InputFrame currentInput;
 
-    public bool debug;
+    public bool debug, isDisabled;
 
     public abstract State StartingState();
 
@@ -45,7 +45,7 @@ public abstract class StateMachine : MonoBehaviour
     public virtual void Update()
     {
         if (!pv.IsMine) { return; }
-        currentInput = InputFrame.GetFrame();
+        currentInput = isDisabled ? InputFrame.none : InputFrame.GetFrame();
 
         currentState.Update(currentInput, gameObject);
     }

@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class AbilityStateMachine : StateMachine
 {
-    public AbilityProfile ability1;
-    public AbilityProfile ability2;
+    public AbilityProfile ability;
 
-    public float cooldown1, cooldown2;
-    public bool ability1Active, ability2Active;
+    public AbilitySlot abilitySlot;
+    public float remainingCooldown;
+    public bool abilityActive;
 
     public override State StartingState()
     {
@@ -19,25 +20,37 @@ public class AbilityStateMachine : StateMachine
     {
         base.FixedUpdate();
 
-        if (cooldown1 > 0f)
-            cooldown1 -= Time.fixedDeltaTime;
-        if (cooldown2 > 0f)
-            cooldown2 -= Time.fixedDeltaTime;
+        if (remainingCooldown > 0f)
+            remainingCooldown = Mathf.Max(remainingCooldown - Time.fixedDeltaTime, 0f);
     }
 
-    public bool ability1Ready
+    public bool abilityReady
     {
         get
         {
-            return cooldown1 <= 0f;
+            return remainingCooldown <= 0f;
         }
     }
 
-    public bool ability2Ready
+    public bool AbilityHold
     {
         get
         {
-            return cooldown2 <= 0f;
+            return abilitySlot == AbilitySlot.Ability1 ? currentInput.Ability2Hold : currentInput.Ability3Hold;
         }
     }
+
+    public bool AbilityPress
+    {
+        get
+        {
+            return abilitySlot == AbilitySlot.Ability1 ? currentInput.Ability2Press : currentInput.Ability3Press;
+        }
+    }
+}
+
+public enum AbilitySlot: byte
+{
+    Ability1 = 0,
+    Ability2
 }

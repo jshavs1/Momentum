@@ -37,7 +37,8 @@ public class MovementState : State
         camForward.y = 0f;
         camForward.Normalize();
 
-        camRotation = Quaternion.LookRotation(camForward, Vector3.up);
+        if (camForward != Vector3.zero)
+            camRotation = Quaternion.LookRotation(camForward, Vector3.up);
         targetRotation = Quaternion.FromToRotation(Vector3.up, currentNormal.normalized);
 
         currentSpeed = rigid.velocity.magnitude;

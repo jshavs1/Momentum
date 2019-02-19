@@ -44,6 +44,16 @@ public class CameraController : MonoBehaviour
         transform.position = targetPosition;
     }
 
+    public Ray cameraRay
+    {
+        get
+        {
+            Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+            ray.origin = target.transform.position - Vector3.Project(target.transform.position - ray.origin, Camera.main.transform.right) - Vector3.Project(target.transform.position - ray.origin, Camera.main.transform.up);
+            return ray;
+        }
+    }
+
     float ClampAngle(float angle)
     {
         if (angle > 360f)

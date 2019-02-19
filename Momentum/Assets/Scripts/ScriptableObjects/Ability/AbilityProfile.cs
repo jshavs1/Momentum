@@ -7,7 +7,7 @@ public abstract class AbilityProfile : ScriptableObject
 {
     public float cooldown;
     public float duration;
-    public bool passive, beginCoolDownOnCompletion, disableMovement, disableGun;
+    public bool beginCoolDownOnCompletion, disableMovement, disableGun, disableAbilities;
 
 
     protected abstract System.Type AbilityStateType { get; }

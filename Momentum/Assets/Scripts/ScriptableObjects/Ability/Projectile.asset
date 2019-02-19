@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b677f0fd21f4afea048f2ae7c98c31, type: 3}
+  m_Name: Projectile
+  m_EditorClassIdentifier: 
+  cooldown: 1
+  duration: 0.2
+  beginCoolDownOnCompletion: 0
+  disableMovement: 0
+  disableGun: 1
+  disableAbilities: 0
+  projectilePrefab: {fileID: 556303620770355465, guid: e7c4c0a0bebc0407c98d529bc693d4a3,
+    type: 3}
+  ammo: 1
+  speed: 20
+  distance: 10
+  gravityMultiplier: 2
+  firstShotDelay: 1

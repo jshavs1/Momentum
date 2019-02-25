@@ -37,8 +37,13 @@ public class MenuButton : Selectable
         if (hover)
         {
             anim.SetBool("Hover", true);
-            OnClick.Invoke();
+            if (interactable)
+                OnClick.Invoke();
         }
     }
 
+    protected override void OnCanvasGroupChanged()
+    {
+        interactable = GetComponentInParent<CanvasGroup>()?.interactable ?? true; 
+    }
 }

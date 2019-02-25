@@ -22,7 +22,6 @@ public class Page : MonoBehaviour
 
     public void EnterPage(float duration, float startingScale)
     {
-        enabled = true;
         group.alpha = 0f;
         transform.localScale = Vector3.one * startingScale;
 
@@ -31,17 +30,19 @@ public class Page : MonoBehaviour
 
     private IEnumerator FadeAndScale(float duration, float targetAlpha, float targetScale, bool disable)
     {
+        group.interactable = false;
         float remainingDuration = duration, alpha = group.alpha, scale = transform.localScale.x;
         
         while(remainingDuration > 0f)
         {
-            float currentAlpha = Mathf.Lerp(targetAlpha, alpha, remainingDuration / duration);
-            float currentScale = Mathf.Lerp(targetScale, scale, remainingDuration / duration);
+            float currentAlpha = Mathf.SmoothStep(targetAlpha, alpha, remainingDuration / duration);
+            float currentScale = Mathf.SmoothStep(targetScale, scale, remainingDuration / duration);
             group.alpha = currentAlpha;
             transform.localScale = Vector3.one * currentScale;
             remainingDuration -= Time.deltaTime;
             yield return null;
         }
+        group.interactable = true;
         group.alpha = targetAlpha;
         transform.localScale = Vector3.one * targetScale;
 

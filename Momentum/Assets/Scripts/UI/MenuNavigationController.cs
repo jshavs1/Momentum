@@ -21,7 +21,7 @@ public class MenuNavigationController : MonoBehaviour
         startingPage.gameObject.SetActive(true);
     }
 
-    #region Navigation Functions
+    #region Base Navigation Functions
 
     private void ExitCurrentPage(float targetScale)
     {
@@ -57,6 +57,4 @@ public class MenuNavigationController : MonoBehaviour
         Page play = pages["PlayPage"];
         NextPage(play, toScale, fromScale);
     }
-
-
 }

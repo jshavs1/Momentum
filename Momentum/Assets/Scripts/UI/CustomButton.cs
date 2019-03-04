@@ -5,34 +5,56 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class MenuButton : CustomButton
+[RequireComponent(typeof(Animator))]
+public class CustomButton : Selectable
 {
+    public Animator anim;
+    public UnityEvent OnClick;
+    private bool _hover;
+    protected bool hover
+    {
+        get { return _hover; }
+        set
+        {
+            _hover = value;
+            if (value)
+                OnHoverEnter();
+            else
+                OnHoverExit();
+        }
+    }
+
     public override void OnPointerEnter(PointerEventData eventData)
     {
         base.OnPointerEnter(eventData);
-        anim.SetBool("Hover", hover);
+        hover = true;
     }
 
     public override void OnPointerExit(PointerEventData eventData)
     {
         base.OnPointerExit(eventData);
-        anim.SetBool("Hover", hover);
+        hover = false;
     }
 
     public override void OnPointerDown(PointerEventData eventData)
     {
         base.OnPointerDown(eventData);
-        anim.SetBool("Hover", false);
     }
 
     public override void OnPointerUp(PointerEventData eventData)
     {
         base.OnPointerUp(eventData);
-        anim.SetBool("Hover", true);
+        if (!hover) { return; }
+        if (interactable)
+            OnClick.Invoke();
     }
+
+    public virtual void OnHoverEnter() { }
+
+    public virtual void OnHoverExit() { }
 
     protected override void OnCanvasGroupChanged()
     {
-        interactable = GetComponentInParent<CanvasGroup>()?.interactable ?? true; 
+        interactable = GetComponentInParent<CanvasGroup>()?.interactable ?? true;
     }
 }

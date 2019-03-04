@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    private string mode;
+    public readonly byte maxPlayers = 8;
+
 
     public InputProfile inputProfile;
 
@@ -31,5 +34,15 @@ public class GameManager : MonoBehaviour
         {
             Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.None : CursorLockMode.Locked;
         }
+    }
+
+    public void SetGameMode(string mode)
+    {
+        this.mode = mode;
+    }
+
+    public string GetGameMode()
+    {
+        return mode;
     }
 }

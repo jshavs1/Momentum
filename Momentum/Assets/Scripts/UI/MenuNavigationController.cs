@@ -7,7 +7,11 @@ public class MenuNavigationController : MonoBehaviour
     public Page startingPage;
     public float transitionDuration = 1f, fromScale = 2f, toScale = 0.5f;
     public Dictionary<string, Page> pages;
-    private Page previousPage, currentPage;
+    public AnimationCurve transitionCurve;
+
+
+    private Page previousPage, currentPage, currentModal;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -26,7 +30,7 @@ public class MenuNavigationController : MonoBehaviour
     private void ExitCurrentPage(float targetScale)
     {
         if (currentPage == null) { return; }
-        currentPage.LeavePage(transitionDuration, targetScale);
+        currentPage.LeavePage(transitionDuration, targetScale, transitionCurve);
         previousPage = currentPage;
     }
 
@@ -35,7 +39,7 @@ public class MenuNavigationController : MonoBehaviour
         page.gameObject.SetActive(true);
         ExitCurrentPage(exitScale);
         currentPage = page;
-        page.EnterPage(transitionDuration, enterScale);
+        page.EnterPage(transitionDuration, enterScale, transitionCurve);
     }
 
     public void BackPage()
@@ -50,11 +54,34 @@ public class MenuNavigationController : MonoBehaviour
         Application.Quit();
     }
 
+    public void PresentPageModal(Page page)
+    {
+        if (currentPage != null) { currentPage.interactable = false; }
+        if (currentModal != null) { ExitCurrentModal(); }
+        page.gameObject.SetActive(true);
+        currentModal = page;
+        page.EnterPage(transitionDuration, 0.9f, transitionCurve);
+    }
+
+    public void ExitCurrentModal()
+    {
+        if (currentPage != null) { currentPage.interactable = true; }
+        if (currentModal == null) { return; }
+        currentModal.LeavePage(transitionDuration, 0.9f, transitionCurve);
+        currentModal = null;
+    }
+
     #endregion
 
-    public void NavigateToPlay()
+    public void NavigateTo(string page)
     {
-        Page play = pages["PlayPage"];
-        NextPage(play, toScale, fromScale);
+        Page nextPage = pages[page];
+        NextPage(nextPage, toScale, fromScale);
+    }
+
+    public void PresentAsModal(string page)
+    {
+        Page nextModal = pages[page];
+        PresentPageModal(nextModal);
     }
 }

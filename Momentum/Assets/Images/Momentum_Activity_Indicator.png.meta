@@ -1,0 +1,3144 @@
+fileFormatVersion: 2
+guid: d0b68aff02b5949c398dd2cdf56e4a34
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Momentum_Activity_Indicator_0
+    21300002: Momentum_Activity_Indicator_1
+    21300004: Momentum_Activity_Indicator_2
+    21300006: Momentum_Activity_Indicator_3
+    21300008: Momentum_Activity_Indicator_4
+    21300010: Momentum_Activity_Indicator_5
+    21300012: Momentum_Activity_Indicator_6
+    21300014: Momentum_Activity_Indicator_7
+    21300016: Momentum_Activity_Indicator_8
+    21300018: Momentum_Activity_Indicator_9
+    21300020: Momentum_Activity_Indicator_10
+    21300022: Momentum_Activity_Indicator_11
+    21300024: Momentum_Activity_Indicator_12
+    21300026: Momentum_Activity_Indicator_13
+    21300028: Momentum_Activity_Indicator_14
+    21300030: Momentum_Activity_Indicator_15
+    21300032: Momentum_Activity_Indicator_16
+    21300034: Momentum_Activity_Indicator_17
+    21300036: Momentum_Activity_Indicator_18
+    21300038: Momentum_Activity_Indicator_19
+    21300040: Momentum_Activity_Indicator_20
+    21300042: Momentum_Activity_Indicator_21
+    21300044: Momentum_Activity_Indicator_22
+    21300046: Momentum_Activity_Indicator_23
+    21300048: Momentum_Activity_Indicator_24
+    21300050: Momentum_Activity_Indicator_25
+    21300052: Momentum_Activity_Indicator_26
+    21300054: Momentum_Activity_Indicator_27
+    21300056: Momentum_Activity_Indicator_28
+    21300058: Momentum_Activity_Indicator_29
+    21300060: Momentum_Activity_Indicator_30
+    21300062: Momentum_Activity_Indicator_31
+    21300064: Momentum_Activity_Indicator_32
+    21300066: Momentum_Activity_Indicator_33
+    21300068: Momentum_Activity_Indicator_34
+    21300070: Momentum_Activity_Indicator_35
+    21300072: Momentum_Activity_Indicator_36
+    21300074: Momentum_Activity_Indicator_37
+    21300076: Momentum_Activity_Indicator_38
+    21300078: Momentum_Activity_Indicator_39
+    21300080: Momentum_Activity_Indicator_40
+    21300082: Momentum_Activity_Indicator_41
+    21300084: Momentum_Activity_Indicator_42
+    21300086: Momentum_Activity_Indicator_43
+    21300088: Momentum_Activity_Indicator_44
+    21300090: Momentum_Activity_Indicator_45
+    21300092: Momentum_Activity_Indicator_46
+    21300094: Momentum_Activity_Indicator_47
+    21300096: Momentum_Activity_Indicator_48
+    21300098: Momentum_Activity_Indicator_49
+    21300100: Momentum_Activity_Indicator_50
+    21300102: Momentum_Activity_Indicator_51
+    21300104: Momentum_Activity_Indicator_52
+    21300106: Momentum_Activity_Indicator_53
+    21300108: Momentum_Activity_Indicator_54
+    21300110: Momentum_Activity_Indicator_55
+    21300112: Momentum_Activity_Indicator_56
+    21300114: Momentum_Activity_Indicator_57
+    21300116: Momentum_Activity_Indicator_58
+    21300118: Momentum_Activity_Indicator_59
+    21300120: Momentum_Activity_Indicator_60
+    21300122: Momentum_Activity_Indicator_61
+    21300124: Momentum_Activity_Indicator_62
+    21300126: Momentum_Activity_Indicator_63
+    21300128: Momentum_Activity_Indicator_64
+    21300130: Momentum_Activity_Indicator_65
+    21300132: Momentum_Activity_Indicator_66
+    21300134: Momentum_Activity_Indicator_67
+    21300136: Momentum_Activity_Indicator_68
+    21300138: Momentum_Activity_Indicator_69
+    21300140: Momentum_Activity_Indicator_70
+    21300142: Momentum_Activity_Indicator_71
+    21300144: Momentum_Activity_Indicator_72
+    21300146: Momentum_Activity_Indicator_73
+    21300148: Momentum_Activity_Indicator_74
+    21300150: Momentum_Activity_Indicator_75
+    21300152: Momentum_Activity_Indicator_76
+    21300154: Momentum_Activity_Indicator_77
+    21300156: Momentum_Activity_Indicator_78
+    21300158: Momentum_Activity_Indicator_79
+    21300160: Momentum_Activity_Indicator_80
+    21300162: Momentum_Activity_Indicator_81
+    21300164: Momentum_Activity_Indicator_82
+    21300166: Momentum_Activity_Indicator_83
+    21300168: Momentum_Activity_Indicator_84
+    21300170: Momentum_Activity_Indicator_85
+    21300172: Momentum_Activity_Indicator_86
+    21300174: Momentum_Activity_Indicator_87
+    21300176: Momentum_Activity_Indicator_88
+    21300178: Momentum_Activity_Indicator_89
+    21300180: Momentum_Activity_Indicator_90
+    21300182: Momentum_Activity_Indicator_91
+    21300184: Momentum_Activity_Indicator_92
+    21300186: Momentum_Activity_Indicator_93
+    21300188: Momentum_Activity_Indicator_94
+    21300190: Momentum_Activity_Indicator_95
+    21300192: Momentum_Activity_Indicator_96
+    21300194: Momentum_Activity_Indicator_97
+    21300196: Momentum_Activity_Indicator_98
+    21300198: Momentum_Activity_Indicator_99
+    21300200: Momentum_Activity_Indicator_100
+    21300202: Momentum_Activity_Indicator_101
+    21300204: Momentum_Activity_Indicator_102
+    21300206: Momentum_Activity_Indicator_103
+    21300208: Momentum_Activity_Indicator_104
+    21300210: Momentum_Activity_Indicator_105
+    21300212: Momentum_Activity_Indicator_106
+    21300214: Momentum_Activity_Indicator_107
+    21300216: Momentum_Activity_Indicator_108
+    21300218: Momentum_Activity_Indicator_109
+    21300220: Momentum_Activity_Indicator_110
+    21300222: Momentum_Activity_Indicator_111
+    21300224: Momentum_Activity_Indicator_112
+    21300226: Momentum_Activity_Indicator_113
+    21300228: Momentum_Activity_Indicator_114
+    21300230: Momentum_Activity_Indicator_115
+    21300232: Momentum_Activity_Indicator_116
+    21300234: Momentum_Activity_Indicator_117
+    21300236: Momentum_Activity_Indicator_118
+    21300238: Momentum_Activity_Indicator_119
+    21300240: Momentum_Activity_Indicator_120
+    21300242: Momentum_Activity_Indicator_121
+    21300244: Momentum_Activity_Indicator_122
+    21300246: Momentum_Activity_Indicator_123
+    21300248: Momentum_Activity_Indicator_124
+    21300250: Momentum_Activity_Indicator_125
+    21300252: Momentum_Activity_Indicator_126
+    21300254: Momentum_Activity_Indicator_127
+    21300256: Momentum_Activity_Indicator_128
+    21300258: Momentum_Activity_Indicator_129
+    21300260: Momentum_Activity_Indicator_130
+    21300262: Momentum_Activity_Indicator_131
+    21300264: Momentum_Activity_Indicator_132
+    21300266: Momentum_Activity_Indicator_133
+    21300268: Momentum_Activity_Indicator_134
+    21300270: Momentum_Activity_Indicator_135
+    21300272: Momentum_Activity_Indicator_136
+    21300274: Momentum_Activity_Indicator_137
+    21300276: Momentum_Activity_Indicator_138
+    21300278: Momentum_Activity_Indicator_139
+    21300280: Momentum_Activity_Indicator_140
+    21300282: Momentum_Activity_Indicator_141
+    21300284: Momentum_Activity_Indicator_142
+    21300286: Momentum_Activity_Indicator_143
+    21300288: Momentum_Activity_Indicator_144
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4628
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc798ceebbdd43cbb9c85e5ab45b174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_1
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 4628
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2725b777a579f4a9f9b69c7650161a9d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_2
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 4628
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddaba7410dad74cb79cae9d532546d5e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_3
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 4628
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3da3d867df3842709957b570ec334fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_4
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 4628
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f87287c2d4bd4feea025a3eda866639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_5
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 4628
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0afcd3bdba3145c9a2395a1cd3a3561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_6
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 4628
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34bde88acf7b846f8973836c830c0ffc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_7
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 4628
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87b851f521d7b49d4baf39b06b948ba8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_8
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 4628
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 423d65bf2be6c4febbcd2cf5b58ea0c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_9
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 4628
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17887487c552142e5a880dca908e6e1b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_10
+      rect:
+        serializedVersion: 2
+        x: 5140
+        y: 4628
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20dc1a0b9441e4363b4e2813af243a6b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_11
+      rect:
+        serializedVersion: 2
+        x: 5654
+        y: 4628
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ee4564cddf094a1d8afaddfa6b435b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_12
+      rect:
+        serializedVersion: 2
+        x: 6168
+        y: 4628
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd71af712b7144b1f875d12434df7112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_13
+      rect:
+        serializedVersion: 2
+        x: 6682
+        y: 4628
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cba70beba6e74a7cb4fd08648ace17b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_14
+      rect:
+        serializedVersion: 2
+        x: 7196
+        y: 4628
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fbef7a1ff190455989ea93a0a98a855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4114
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6cd2f82a2b046529f7ce80b7ab408d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_16
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 4114
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f11ba93b8fd4632a3d5cc2ed75c97c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_17
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 4114
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13597dc7a9004234b876d48088c3cf6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_18
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 4114
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ffb73030c03455db1eee916ce7df3e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_19
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 4114
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8a25a524ed5472a820542c8c3b8d74
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_20
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 4114
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1d61e7231f694f56984793fd40824e9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_21
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 4114
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 807f11499189d421a884a1ea37207c1b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_22
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 4114
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96bb8e781aa514e2f8a399370bf62042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_23
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 4114
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20500e0d6ce164e1abfef4521240b122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_24
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 4114
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dae4b97d0a8948d985d559d9a9e72b4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_25
+      rect:
+        serializedVersion: 2
+        x: 5140
+        y: 4114
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2c19106f8acf47df8179a69f4e692ba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_26
+      rect:
+        serializedVersion: 2
+        x: 5654
+        y: 4114
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2162d4c5a70b540ffab3e33fa58e872e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_27
+      rect:
+        serializedVersion: 2
+        x: 6168
+        y: 4114
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a5d845280004b1ba437285a38c6849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_28
+      rect:
+        serializedVersion: 2
+        x: 6682
+        y: 4114
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fbf9a4f4c164457ba13b31733052547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_29
+      rect:
+        serializedVersion: 2
+        x: 7196
+        y: 4114
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 061fabbfb6a8d4816b875ec6235f73e9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3600
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fc4838c4119e439489e5b2a5e717e2a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_31
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 3600
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a801a077bb1e47b68ab874326044797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_32
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 3600
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87add5d9498bf47f5a552f7903be3e99
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_33
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 3600
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ebbb398e6144c68a4875cdbee67dbe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_34
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 3600
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a10957b1e70345d892f9a975fed4180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_35
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 3600
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c531b0f029c040d6acbbe40697552d3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_36
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 3600
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 151c2b8382844454a9a0f3999a0f1065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_37
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 3600
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0fca1a60a3774e83b90debdf6e153f8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_38
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 3600
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f36a73c1f51c4dcf9dddf9a6b5de0f9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_39
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 3600
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93bd005aaa8154c3885fa899653393e6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_40
+      rect:
+        serializedVersion: 2
+        x: 5140
+        y: 3600
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13e1693be73e44c16a68d0f68ff7b6fd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_41
+      rect:
+        serializedVersion: 2
+        x: 5654
+        y: 3600
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f072e09dc284216913590ae8070fdb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_42
+      rect:
+        serializedVersion: 2
+        x: 6168
+        y: 3600
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 156dae87e89bb43c5ae9e74c52e143a3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_43
+      rect:
+        serializedVersion: 2
+        x: 6682
+        y: 3600
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 358e05c110c3548ef8d722c583302d36
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_44
+      rect:
+        serializedVersion: 2
+        x: 7196
+        y: 3600
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fe30645532ef4efcaf442d189995064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3086
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c7b6f31d16c746b8a7b0e47ec024a88
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_46
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 3086
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1746933f6e314f31ba23d46f39d37b1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_47
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 3086
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 544f18946fd594867a30ad6ff59216fc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_48
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 3086
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f4b8a596d00452fb3979023f93c3d1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_49
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 3086
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c46a6946315f446059d908ae22c52285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_50
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 3086
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53aa6143e9294c0ea7a1b5a40408a01
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_51
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 3086
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc72862864331442f8ef04d4a9856fa9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_52
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 3086
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6684f339bcd8d491284f79a6023a53cc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_53
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 3086
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ce100520f104421bbcee774d6b201a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_54
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 3086
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 098d45ab0e4f249f5a4577ee054b3962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_55
+      rect:
+        serializedVersion: 2
+        x: 5140
+        y: 3086
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ef6fdf8c382430485ff384b93e0fb0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_56
+      rect:
+        serializedVersion: 2
+        x: 5654
+        y: 3086
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa339f34264e64d5d999990f4629eee4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_57
+      rect:
+        serializedVersion: 2
+        x: 6168
+        y: 3086
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68b2e1597e69b4d98a7eacb0db3621ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_58
+      rect:
+        serializedVersion: 2
+        x: 6682
+        y: 3086
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43be91c02a11f425a8536fbbc30f6298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_59
+      rect:
+        serializedVersion: 2
+        x: 7196
+        y: 3086
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c09db770db9d74cb2af0ef1b67232cd1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2572
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 669b82d93d58d437aaa27d440dce2641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_61
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 2572
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4104860ef465d4547af507610e7171c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_62
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 2572
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c389259254e5e4af99a3dcc313f09f8b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_63
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 2572
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a29974ed8cfd64736a107ace03b64707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_64
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 2572
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13bd59aff7b8d47c3a65342616923876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_65
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 2572
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f4fb086e3f4481aa44ddb820650da4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_66
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 2572
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0680b1756e14148dd8549caa24ab2a35
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_67
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 2572
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0fbe9604a0824815a23081c1535c7aa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_68
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 2572
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22c66e8d7ebcb4e49bbc6eda63e4668d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_69
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 2572
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 892e84aee7b674bf4bfc7dd93cbd721f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_70
+      rect:
+        serializedVersion: 2
+        x: 5140
+        y: 2572
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 824feca424ade4bd792df352f913f93b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_71
+      rect:
+        serializedVersion: 2
+        x: 5654
+        y: 2572
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 078f1906060f8445abef7031fd4cfbc6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_72
+      rect:
+        serializedVersion: 2
+        x: 6168
+        y: 2572
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e07687ffb869f490e8544d50e2571923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_73
+      rect:
+        serializedVersion: 2
+        x: 6682
+        y: 2572
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6872cc2c9a8c245c7930f8f1c54c992f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_74
+      rect:
+        serializedVersion: 2
+        x: 7196
+        y: 2572
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b953ad9b7697646a49e1f4b13f56cde5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2058
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a8fa2fdeb6445f2ab8486d0c15ccff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_76
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 2058
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac07255e77aa4b67b8e3ce57dba8e21
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_77
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 2058
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ada4444b0d24381b8af9b97f2be59f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_78
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 2058
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d275032e98dee4dfdb138c3693863d83
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_79
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 2058
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ed1a24fa468a4df18411d0d7d7a57f4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_80
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 2058
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 416a289434f6449c986ec2a855fce138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_81
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 2058
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f510722a94cb4283ac6665cfd3f3971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_82
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 2058
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7f2fd24a1330447cb305f7ba29c7b7c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_83
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 2058
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa246004be5c74a258514c335a7e05b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_84
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 2058
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 421031d1db1054fe8a001635b2be36f0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_85
+      rect:
+        serializedVersion: 2
+        x: 5140
+        y: 2058
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e2f99b50727c41a8baffbb81843a5f7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_86
+      rect:
+        serializedVersion: 2
+        x: 5654
+        y: 2058
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28b51380f123465e8e7bfd38d0892ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_87
+      rect:
+        serializedVersion: 2
+        x: 6168
+        y: 2058
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 250c10345a56446ab85c93ffb6e919c9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_88
+      rect:
+        serializedVersion: 2
+        x: 6682
+        y: 2058
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48b8494b7e00a4f82a6c86e70986752d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_89
+      rect:
+        serializedVersion: 2
+        x: 7196
+        y: 2058
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20f53101479de4cefacb3bb7115a1a27
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1544
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc9f837f601d48939625f5d838b54ed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_91
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 1544
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ed1d596e2e8465091660321d12970e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_92
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1544
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d4927cd50b3044a3a858c766ccf8fd4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_93
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 1544
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3009680e78333499cb51f86e4151c55d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_94
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 1544
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b862024f595774e58b24df2f33aa6b69
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_95
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 1544
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c1b4fc68283147b895e4871a6372b84
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_96
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 1544
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d927935027e4544d3b3c5fab670d9573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_97
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 1544
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7c56c1a6c694299ae66c8556589035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_98
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 1544
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e56ab132081d48ad83dbad336792962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_99
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 1544
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dcdc07d17a8b4f199e5c9bd5424351c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_100
+      rect:
+        serializedVersion: 2
+        x: 5140
+        y: 1544
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ac7f197833664583aacf8eda95bdc7b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_101
+      rect:
+        serializedVersion: 2
+        x: 5654
+        y: 1544
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b16996b895f46ebb444d9662bf9280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_102
+      rect:
+        serializedVersion: 2
+        x: 6168
+        y: 1544
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f9636c96c954d2fb181667f2a6a93b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_103
+      rect:
+        serializedVersion: 2
+        x: 6682
+        y: 1544
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8315f891f91c4418aa5ede95cd25e317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_104
+      rect:
+        serializedVersion: 2
+        x: 7196
+        y: 1544
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3c76f19be3ae4167b5b067ef86a4d5a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_105
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1030
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305d850df75774c64b2a6a88be69163b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_106
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 1030
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2906740f2bc01481594b7095082b4b87
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_107
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1030
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 497dcb72a2ba34509b1f82e515c6ee17
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_108
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 1030
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ef94b55171b34ccfa66210c13502bb8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_109
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 1030
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67b50db1b00294ff78a984498ceb9678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_110
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 1030
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e881ef7446e04497c8e59bbfee178a73
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_111
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 1030
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a91efd51463a345669ab3fafc22c6339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_112
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 1030
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30743573b999e4be1abc31f3eccf3520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_113
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 1030
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a76cbfc986bad4b5c9ccc564a52790a1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_114
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 1030
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15204debf45944fceb1e53a487b7eb34
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_115
+      rect:
+        serializedVersion: 2
+        x: 5140
+        y: 1030
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9c4eed1c8874b1f90f18b03c5c78b3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_116
+      rect:
+        serializedVersion: 2
+        x: 5654
+        y: 1030
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab00d9c7a3ec5429185df1e3c8001df0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_117
+      rect:
+        serializedVersion: 2
+        x: 6168
+        y: 1030
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97a9b307c8f9c4f8e88a99e88feda70b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_118
+      rect:
+        serializedVersion: 2
+        x: 6682
+        y: 1030
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3911f2963da9648a3b2d93326c770193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_119
+      rect:
+        serializedVersion: 2
+        x: 7196
+        y: 1030
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 796732ae8b84244ea8adc9531c42d4b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 516
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd4f4dad25d0450ba091146e62d4afa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_121
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 516
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93026c1ae186b48c88ba073db9b4a4b4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_122
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 516
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a34d178a3952549e088bff24d3140c86
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_123
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 516
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 583f24e7e213f494e88965c3aa863354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_124
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 516
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2833a7763260d46619c11e9a078e52a8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_125
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 516
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c2b687ddd124e7690e97866cbc7129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_126
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 516
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb2f4f0b68eb640dfabd8879655ba7bc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_127
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 516
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31d1cd3cdf1154c96a3db4f129f12fdc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_128
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 516
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a26d9a275019e4c59a79e426205dee4f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_129
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 516
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d67fea10865e4890b094359932d8763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_130
+      rect:
+        serializedVersion: 2
+        x: 5140
+        y: 516
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc55fc59f9c4f4a268e28dc0775ffe2d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_131
+      rect:
+        serializedVersion: 2
+        x: 5654
+        y: 516
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d00343dceec494cd296245ec59885797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_132
+      rect:
+        serializedVersion: 2
+        x: 6168
+        y: 516
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d40568d2798db4eb0b3b5903bec5b956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_133
+      rect:
+        serializedVersion: 2
+        x: 6682
+        y: 516
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b73c9937ccde40669cca11194cdc646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_134
+      rect:
+        serializedVersion: 2
+        x: 7196
+        y: 516
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb243442d92694b829ccb609d3a2db87
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_135
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c0221a7aebf44d74955e4fc146bf2df
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_136
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 2
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a384aedbc4f14685ab2b491e027466a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_137
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 2
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a41013137b041138a2101bc62e4ea4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_138
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 2
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf3a0d9210937431ab51370623db60de
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_139
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 2
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e0926438c33444595c6e9f26e32fc1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_140
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 2
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed65eb5a07eb142fea0dde4e22cf1c46
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_141
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 2
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9baaf40de570d49019e1917a8f4c0ec8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_142
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 2
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5958236ad6ad4df1a03f1d6485d117c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_143
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 2
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8914c0c5f6d64f04bcf172a083a5b41
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Momentum_Activity_Indicator_144
+      rect:
+        serializedVersion: 2
+        x: 4626
+        y: 2
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 650615e49d2f1454d9b3f8431754afbb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f70fb5c974d2549b89a4de0973064279
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

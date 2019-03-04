@@ -21,11 +21,11 @@ public class MenuButtonGroup : MonoBehaviour
 
     public void JoinRoom()
     {
-        MultiplayerNetworkManager.Instance.JoinRoom(selectedCell.GetComponent<RoomCell>().roomName);
+        //MultiplayerNetworkManager.Instance.JoinRoom(selectedCell.GetComponent<RoomCell>().roomName);
     }
 
     public void CreateRoom()
     {
-        MultiplayerNetworkManager.Instance.CreateRoom(null);
+        //MultiplayerNetworkManager.Instance.CreateRoom(null);
     }
 }

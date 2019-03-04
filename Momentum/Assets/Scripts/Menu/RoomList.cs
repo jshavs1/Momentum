@@ -25,6 +25,7 @@ public class RoomList : MonoBehaviour
         }
 
         roomCells.Clear();
+        /*
         foreach (RoomInfo roomInfo in MultiplayerNetworkManager.Instance.roomList)
         {
             Debug.Log(roomInfo.Name);
@@ -32,6 +33,7 @@ public class RoomList : MonoBehaviour
             roomCell.GetComponent<RoomCell>().roomName = roomInfo.Name;
             roomCells.Add(roomCell);
         }
+        */
     }
 
     public void CellClicked(GameObject cell)

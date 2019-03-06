@@ -37,4 +37,32 @@ public class PlayerRow : MonoBehaviour
             activityIndicator.SetActive(false);
         }
     }
+
+    public void SetReady(bool ready, Team team)
+    {
+        Color color;
+        if (ready)
+        {
+            color = ColorDefaults.Ready;
+            color.a = 225f / 255f;
+            
+        }
+        else
+        {
+            if (team == Team.Blue)
+            {
+                color = ColorDefaults.Blue;
+                color.a = 225f / 255f;
+            }
+            else if (team == Team.Red)
+            {
+                color = ColorDefaults.Red;
+                color.a = 225f / 255f;
+            }
+            else
+                color = Color.gray;
+        }
+
+        GetComponentInChildren<Image>().color = color;
+    }
 }

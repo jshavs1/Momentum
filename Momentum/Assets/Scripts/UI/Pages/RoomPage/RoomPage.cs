@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.UI;
 
 public class RoomPage : Page
 {
     public TeamList blueTeam;
     public TeamList redTeam;
+    public CustomButton readyButton;
 
     private Dictionary<int, Player> playerDict;
     private Player[] playerList
@@ -25,7 +27,6 @@ public class RoomPage : Page
         playerDict = new Dictionary<int, Player>();
         foreach (Player p in PhotonNetwork.PlayerList)
         {
-            Debug.Log(p.NickName);
             playerDict.Add(p.ActorNumber, p);
         }
 
@@ -49,6 +50,8 @@ public class RoomPage : Page
 
     public void OnBackClick()
     {
+        UpdateReadyButton(false);
+
         MultiplayerNetworkManager.Instance.LeaveRoom();
         MultiplayerNetworkManager.Instance.LeaveLobby();
         GetComponentInParent<MenuNavigationController>().BackPage();
@@ -75,7 +78,6 @@ public class RoomPage : Page
     void OnPlayerExitRoom(Player player)
     {
         Debug.Log("Player left Room: " + player.NickName);
-
         playerDict.Remove(player.ActorNumber);
         blueTeam.PlayerListUpdated(playerList);
         redTeam.PlayerListUpdated(playerList);
@@ -85,6 +87,9 @@ public class RoomPage : Page
     {
         Debug.Log("Player properties updated");
         playerDict[player.ActorNumber] = player;
+
+        if (player.IsLocal)
+            readyButton.interactable = true;
 
         blueTeam.PlayerListUpdated(playerList);
         redTeam.PlayerListUpdated(playerList);
@@ -96,7 +101,34 @@ public class RoomPage : Page
 
         Debug.Log("Assigning player to " + list.team + " team");
 
-        ExitGames.Client.Photon.Hashtable playerProps = new ExitGames.Client.Photon.Hashtable { { "team", (byte)list.team } };
+        ExitGames.Client.Photon.Hashtable playerProps = new ExitGames.Client.Photon.Hashtable { { "team", (byte)list.team }, { "ready", false } };
         player.SetCustomProperties(playerProps);
+    }
+
+    public void OnReadyUpClick()
+    {
+        bool isReady = (bool) PhotonNetwork.LocalPlayer.CustomProperties["ready"];
+
+        ExitGames.Client.Photon.Hashtable playerProps = new ExitGames.Client.Photon.Hashtable { { "ready", !isReady } };
+        PhotonNetwork.LocalPlayer.SetCustomProperties(playerProps);
+
+        readyButton.interactable = false;
+
+        UpdateReadyButton(!isReady);
+    }
+
+    private void UpdateReadyButton(bool isReady)
+    {
+        Text text = readyButton.GetComponentInChildren<Text>();
+        if (isReady)
+        {
+            text.color = ColorDefaults.Red;
+            text.text = "Unready";
+        }
+        else
+        {
+            text.color = ColorDefaults.Ready;
+            text.text = "Ready Up";
+        }
     }
 }

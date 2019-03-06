@@ -22,13 +22,21 @@ public class TeamList : MonoBehaviour
         foreach (PlayerRow row in playerRows)
         {
             row.SetNickname(string.Empty);
+            row.SetReady(false, team);
         }
 
         foreach (Player player in playerList)
         {
             if ((Team) player.CustomProperties["team"] == team)
             {
-                FindOpenRow()?.SetNickname(player.NickName);
+                PlayerRow row = FindOpenRow();
+
+                bool ready = false;
+                if (player.CustomProperties["ready"] != null)
+                    ready = (bool) player.CustomProperties["ready"];
+
+                row?.SetNickname(player.NickName);
+                row?.SetReady(ready, team);
             }
         }
     }

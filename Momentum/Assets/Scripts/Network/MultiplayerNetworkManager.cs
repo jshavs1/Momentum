@@ -40,6 +40,12 @@ public class MultiplayerNetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("Connected to Master");
     }
 
+    public override void OnLeftRoom()
+    {
+        base.OnLeftRoom();
+        PhotonNetwork.LocalPlayer.SetCustomProperties(null);
+    }
+
     public override void OnJoinedLobby()
     {
         base.OnJoinedLobby();

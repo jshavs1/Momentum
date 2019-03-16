@@ -4186,6 +4186,7 @@ MonoBehaviour:
   blueTeam: {fileID: 2134822751}
   redTeam: {fileID: 832173274}
   readyButton: {fileID: 320186555}
+  detailsText: {fileID: 680898527}
 --- !u!225 &590752484
 CanvasGroup:
   m_ObjectHideFlags: 0

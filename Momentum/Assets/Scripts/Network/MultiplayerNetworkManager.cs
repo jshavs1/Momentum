@@ -167,6 +167,14 @@ public class MultiplayerNetworkManager : MonoBehaviourPunCallbacks
         }
     }
 
+    public void BeginMatch()
+    {
+        if (PhotonNetwork.InRoom)
+        {
+            PhotonNetwork.LoadLevel("Test");
+        }
+    }
+
     public void SetNickname(string nickname)
     {
         if (PhotonNetwork.IsConnected)

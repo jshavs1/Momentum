@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Photon.Pun;
 
-public class Health : MonoBehaviour, IDamagable, IPunObservable
+public class Health : MonoBehaviour, IPunObservable
 {
     private float _currentHitPoints;
     private float currentHitPoints
@@ -33,15 +33,15 @@ public class Health : MonoBehaviour, IDamagable, IPunObservable
         currentHitPoints = hitPoints;
     }
 
-    public void takeDamage(float damage)
+    public void ChangeHealth(float delta)
     {
-        GetComponent<PhotonView>()?.RPC("takeDamageRPC", RpcTarget.All, damage);
+        GetComponent<PhotonView>()?.RPC("ChangeHealthRPC", RpcTarget.All, delta);
     }
 
     [PunRPC]
-    public void takeDamageRPC(float damage)
+    private void ChangeHealthRPC(float delta)
     {
-        currentHitPoints -= damage;
+        currentHitPoints += delta;
     }
 
     private void HealthChanged(float prevHitPoints, float nextHitPoints)

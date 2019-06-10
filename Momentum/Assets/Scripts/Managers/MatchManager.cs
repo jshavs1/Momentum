@@ -9,7 +9,13 @@ public class MatchManager : MonoBehaviour
 
     public Transform[] spawnPoints;
 
-
+    private void Awake()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            InstantiateUtilities();
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +29,11 @@ public class MatchManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+    }
+
+    private void InstantiateUtilities()
+    {
+        PhotonNetwork.Instantiate("HealthUtility", Vector3.zero, Quaternion.identity);
     }
 
     private void InstantiateNetworkPlayer()

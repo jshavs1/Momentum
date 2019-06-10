@@ -38,5 +38,8 @@ MonoBehaviour:
   - TriggerProjectileLateralRPC
   - ExplodeRPC
   - TakeKnockbackRPC
+  - DamagePlayerRPC
+  - ChangeHealthRPC
+  - ChangePlayerHealthRPC
   DisableAutoOpenWizard: 1
   ShowSettings: 0

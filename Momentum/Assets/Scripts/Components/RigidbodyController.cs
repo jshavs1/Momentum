@@ -59,11 +59,3 @@ public class RigidbodyController : MonoBehaviour
         rigid.AddForce(dir * knockback, ForceMode.Impulse);
     }
 }
-
-
-public enum Direction
-{
-    Horizontal,
-    Vertical,
-    All
-}

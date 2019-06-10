@@ -9,13 +9,4 @@ public class ThrusterAbilityProfile : AbilityProfile
     public float thrust;
     public float maxYVel;
     public float fuel;
-
-    protected override Type AbilityStateType { get { return typeof(ThrusterState); } }
-
-    protected override void Initialize(AbilityState state)
-    {
-        ThrusterState thruster = state as ThrusterState;
-        thruster.ability = this;
-        thruster.remainingFuel = fuel;
-    }
 }

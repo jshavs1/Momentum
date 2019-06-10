@@ -36,7 +36,21 @@ public class AbilityStateMachine : StateMachine
     {
         get
         {
-            return abilitySlot == AbilitySlot.Ability1 ? currentInput.Ability2Hold : currentInput.Ability3Hold;
+            switch(abilitySlot)
+            {
+                case AbilitySlot.Primary:
+                    return currentInput.PrimaryHold;
+                case AbilitySlot.Secondary:
+                    return currentInput.SecondaryHold;
+                case AbilitySlot.Ability3:
+                    return currentInput.Ability3Hold;
+                case AbilitySlot.Ability4:
+                    return currentInput.Ability4Hold;
+                case AbilitySlot.Ability5:
+                    return currentInput.Ability5Hold;
+                default:
+                    return false;
+            }
         }
     }
 
@@ -44,13 +58,21 @@ public class AbilityStateMachine : StateMachine
     {
         get
         {
-            return abilitySlot == AbilitySlot.Ability1 ? currentInput.Ability2Press : currentInput.Ability3Press;
+            switch (abilitySlot)
+            {
+                case AbilitySlot.Primary:
+                    return currentInput.PrimaryPress;
+                case AbilitySlot.Secondary:
+                    return currentInput.SecondaryPress;
+                case AbilitySlot.Ability3:
+                    return currentInput.Ability3Press;
+                case AbilitySlot.Ability4:
+                    return currentInput.Ability4Press;
+                case AbilitySlot.Ability5:
+                    return currentInput.Ability5Press;
+                default:
+                    return false;
+            }
         }
     }
-}
-
-public enum AbilitySlot: byte
-{
-    Ability1 = 0,
-    Ability2
 }

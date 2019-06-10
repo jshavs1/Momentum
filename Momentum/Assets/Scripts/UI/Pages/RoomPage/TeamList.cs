@@ -64,10 +64,3 @@ public class TeamList : MonoBehaviour
         }
     }
 }
-
-public enum Team: byte
-{
-    Blue,
-    Red,
-    None
-}

@@ -1,36 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile : MonoBehaviour
 {
+    public float gravityMultiplier;
     protected Rigidbody rigid;
-    protected ProjectileAbilityProfile ability;
-    public bool isLocal;
 
     float gravity = Mathf.Abs(Physics.gravity.y);
     // Start is called before the first frame update
     void Awake()
     {
         rigid = GetComponent<Rigidbody>();
+        rigid.useGravity = false;
     }
 
     private void FixedUpdate()
     {
-        if (ability != null)
-            rigid.AddForce(Vector3.down * gravity * (ability.gravityMultiplier - 1f));
+        rigid.AddForce(gravityMultiplier * Physics.gravity);   
     }
 
-    public void Launch(ProjectileAbilityProfile ability, Vector3 vel)
+    public void Launch(Vector3 vel)
     {
-        this.ability = ability;
         rigid.velocity = vel;
     }
-
-    public void Launch(ProjectileAbilityProfile ability, Vector3 vel, float gravity)
-    {
-        this.gravity = gravity;
-        Launch(ability, vel);
-    }
 }
+
+public class ProjectileEvent : UnityEvent<Collision> { }
+

@@ -15,15 +15,15 @@ public struct InputFrame
     public bool JumpPress;
     public bool PrimaryPress;
     public bool SecondaryPress;
-    public bool Ability1Press;
-    public bool Ability2Press;
     public bool Ability3Press;
+    public bool Ability4Press;
+    public bool Ability5Press;
     public bool JumpHold;
     public bool PrimaryHold;
     public bool SecondaryHold;
-    public bool Ability1Hold;
-    public bool Ability2Hold;
     public bool Ability3Hold;
+    public bool Ability4Hold;
+    public bool Ability5Hold;
     public bool DidScrollUp;
     public bool DidScrollDown;
 
@@ -62,14 +62,14 @@ public struct InputFrame
         SecondaryPress = inputProfile.SecondaryPress();
         SecondaryHold = inputProfile.SecondaryHold();
 
-        Ability1Press = inputProfile.Ability1Press();
-        Ability1Hold = inputProfile.Ability1Hold();
+        Ability3Press = inputProfile.Ability1Press();
+        Ability3Hold = inputProfile.Ability1Hold();
 
-        Ability2Press = inputProfile.Ability2Press();
-        Ability2Hold = inputProfile.Ability2Hold();
+        Ability4Press = inputProfile.Ability2Press();
+        Ability4Hold = inputProfile.Ability2Hold();
 
-        Ability3Press = inputProfile.Ability3Press();
-        Ability3Hold = inputProfile.Ability3Hold();
+        Ability5Press = inputProfile.Ability3Press();
+        Ability5Hold = inputProfile.Ability3Hold();
 
         DidScrollUp = inputProfile.DidScrollUp();
         DidScrollDown = inputProfile.DidScrollDown();
